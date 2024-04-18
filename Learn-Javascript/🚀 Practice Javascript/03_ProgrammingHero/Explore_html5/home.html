@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        nav>ul {
+            display: flex;
+        }
+
+        nav li {
+            list-style: none;
+            margin-right: 20px;
+            padding: 10px 20px;
+        }
+
+        nav li:hover {
+            background: gray;
+        }
+
+        nav li a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ddown {
+            display: none;
+            position: absolute;
+            background-color: lightgray;
+            padding: 0;
+        }
+
+        .ddown li {
+
+            padding: 10px 20px;
+            margin: 0;
+        }
+
+        nav>ul>li:hover>ul {
+            display: block;
+            margin-left: -20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Testimonial</a>
+                    <ul class="ddown">
+                        <li><a href="#">DropDown-1</a></li>
+                        <li><a href="#">DropDown-2</a></li>
+                        <li><a href="#">DropDown-3</a></li>
+                        <li><a href="#">DropDown-4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome Home</h1>
+    </header>
+
+</body>
+
+</html>

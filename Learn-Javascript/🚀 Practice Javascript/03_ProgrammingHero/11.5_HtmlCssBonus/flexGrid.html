@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex gridbox Recap</title>
+    <style>
+        .user-container {
+
+            /* display: flex;
+            flex-wrap: wrap; */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .user {
+            height: 250px;
+            width: 250px;
+            background: chocolate;
+            margin: 10px;
+            padding: 10px;
+            /* text-align: center; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="user-container">
+        <div class="user" id="user-1">
+            <h2>user-1</h2>
+        </div>
+        <div class="user" id="user-2">
+            <h2>user-2</h2>
+        </div>
+        <div class="user" id="user-3">
+            <h2>user-3</h2>
+        </div>
+        <div class="user" id="user-4">
+            <h2>user-4</h2>
+        </div>
+        <div class="user" id="user-5">
+            <h2>user-5</h2>
+        </div>
+        <div class="user" id="user-6">
+            <h2>user-6</h2>
+        </div>
+        <div class="user" id="user-7">
+            <h2>user-7</h2>
+        </div>
+        <div class="user" id="user-8">
+            <h2>user-8</h2>
+        </div>
+        <div class="user" id="user-9">
+            <h2>user-9</h2>
+        </div>
+        <div class="user" id="user-10">
+            <h2>user-10</h2>
+        </div>
+    </section>
+</body>
+
+</html>

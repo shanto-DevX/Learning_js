@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap');
+
+/* */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+header {
+    background: #FFF9F4;
+    min-height: 100vh;
+}
+
+.navbar-brand img {
+    width: 30%;
+}
+
+.hero_heading_1 {
+    color: #363958;
+}
+
+.hero_heading_2 {
+    color: #FA804C;
+}
+
+.nav-item a.nav-link {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.hero_right h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 80px;
+}
+
+.btn-primary {
+    background: #3D4FF3;
+}
+.hero_area {
+    margin-top: 100px;
+}
+.hero_area img {
+    /* max-width: 80%; */
+}
+.shoes {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.shoes h1 {
+
+    font-family: 'Bebas Neue', cursive;
+    font-size: 48px;
+    color: #363958;
+}
+
+.shoes_section .card {
+    padding: 30px 20px;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+}
+
+.shoes_section .card img {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    background: #F1F1F1;
+    border-radius: 10px;
+}
+
+.card-body .card-title{
+    font-size: 26px;
+    font-weight: 700;
+    color: #363958;
+}
+
+.card-body .price{
+    font-size: 36px;
+    font-weight: 700;
+    color: #FA804C;
+    text-decoration: none;
+}
+.service_left{
+    background: #fff;
+    margin: 15px 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 15px;
+    border-radius: 20px;
+}
+.service_left .service_icon img{
+    width: 30%;
+    margin-left: 30px;
+    display: inline-flex;
+}
+
+.service-item_right{
+    margin-left: -100PX;
+}
+.service-item_right h3{
+    font-size: 24px;
+    font-weight: 700;
+    color: #363958;
+
+}
+.service-item_right p{}
+
+
+footer p{
+    font-weight: 500;
+    color: #fff;
+    background-color: #363958;
+    padding: 20px 0px;
+    border-radius: 10px;
+
+}

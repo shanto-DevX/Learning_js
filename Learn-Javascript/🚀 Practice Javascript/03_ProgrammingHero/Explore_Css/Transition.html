@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transection</title>
+    <!--     <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 2px solid saddlebrown;
+            background-color: coral;
+            transition: width 2s ease-in .2s, height 2s ease-in 0.2s, transform 2s ease-in .2s;
+        }
+
+        .box:hover{
+            width: 400px;
+            height: 400px;
+            transform: rotate(180deg);
+        }
+    </style> -->
+
+    <style>
+        .field {
+            border: 1px solid;
+            height: 70vh;
+        }
+
+        .field:hover .ball {
+            transform: translate(750px, -100px);
+        }
+
+        .ball {
+            height: 50px;
+            width: 50px;
+            background: rgb(230, 21, 21);
+            border-radius: 50%;
+            position: relative;
+            left: 515px;
+            transition: transform 1s ease-out .3s;
+        }
+
+        .bat {
+            transition: transform .2s ease-in;
+        }
+
+        .field:hover .bat {
+            transform: rotate(-60deg);
+            transform-origin: top right;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- <div class="box">Hello</div> -->
+    <div class="field">
+        <img src="./bat.png" alt="bat" class="bat">
+        <div class="ball"></div>
+    </div>
+</body>
+
+</html>

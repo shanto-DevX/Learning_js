@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Album</title>
+    <style>
+        .photo-album {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .photo-frame {
+            width: 300px;
+            height: 100%;
+            border: 2px solid goldenrod;
+            border-radius: 10px;
+            position: relative;
+            margin: 10px;
+            overflow: hidden;
+            transition: all 2s ease-in ;
+        }
+
+        .photo img {
+            width: 300px;
+            /* height: 350px; */
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .photo-detail {
+            display: none;
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            top: 0;
+            transition: all 2s ease-in ;
+        }
+
+        .photo-frame:hover .photo-detail {
+            display: block;
+            background-color: rgba(218, 165, 32, 0.548);
+            transition: all 2s ease-in ;
+        }
+
+        .photo-frame:hover .photo{
+            /* transform: scale(1.2) rotate(180deg);
+            transition: all 2s ease-in ; */
+        }
+
+        .photo-detail {
+
+            text-align: center;
+        }
+
+        .photo-detail h3 {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin-top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Photo Album</h1>
+    <section>
+        <div class="photo-album">
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo">
+                    <img src="./2.jpg" alt="food">
+                    <div class="photo-detail">
+                        <h3>Food Image</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero dolore odio
+                            recusandae saepe dicta soluta enim cumque incidunt tempore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
