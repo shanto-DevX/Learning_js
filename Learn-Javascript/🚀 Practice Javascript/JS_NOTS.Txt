@@ -1,0 +1,56 @@
+-> Learn
+
+    * Programming Hero
+    * Stack Lerner
+    * 🏃 From Zero to Full Stack: Master JavaScript and Create Dynamic Web Apps |> 7:46:27
+        -> Revised Before DOM
+    * => 🏃 Chai aur Javascript | हिन्दी
+
+TARGET:
+    * 18-4-2024 TO 30-4-2024
+    🚀 Fully Complete JavaScript
+
+        * Revised JS [Chai aur Code] |> 18-4-2024
+
+*************************************************************************************************************************
+
+=> Resources
+
+    👉 Yahoo Baba
+    |> 1 -> JavaScript Tutorial for beginners in Hindi / Urdu 
+            >- https://www.youtube.com/playlist?list=PL0b6OzIxLPbx-BZTaWu_AF7hsKo_Fvsnf
+
+    |> 2 -> Advance JavaScript Tutorial in Hindi / Urdu 
+            >- https://www.youtube.com/playlist?list=PL0b6OzIxLPbzvz4j1N4J8zCY8mu3l29MG
+
+    👉 ONE SHORT VIDEOs
+    |> 1 -> 👉 HuXn WebDev -> From Zero to Full Stack: Master JavaScript and Create Dynamic Web Apps 
+            >- https://youtu.be/H3XIJYEPdus?si=eGYhC1RKy6A_Uw33&t=27987
+
+    |> 2 -> 👉KG Coding by Prashant Sir -> 🚀 🔥 JavaScript Complete Course (2024) 4 Projects | Notes | GitHub | Free Certification 
+            >- https://www.youtube.com/watch?v=cpoXLj24BDY&pp=ygUOanMgZnVsbCBjb3Vyc2U%3D
+
+    |> 3 -> 👉 Chai aur Code >-- ONE SHORT
+            >- Part 1 -> https://www.youtube.com/watch?v=sscX432bMZo&list=PLu71SKxNbfoC4nsN2NTFEHPCyvm_CnbDq&index=11&t=11460s&pp=iAQB
+
+            >- Part 2 -> https://www.youtube.com/watch?v=_TjtAyMkiTI&list=PLu71SKxNbfoC4nsN2NTFEHPCyvm_CnbDq&index=10&t=7402s&pp=iAQB
+
+            >- playlist -> https://www.youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37
+    
+    |> 4 -> 👉 Learn With Sumith >-- playlist
+            >- 1 -> https://www.youtube.com/playlist?list=PLHiZ4m8vCp9OkrURufHpGUUTBjJhO9Ghy
+            >- 2 -> https://www.youtube.com/playlist?list=PLHiZ4m8vCp9MFjMRp9EEHWKArbi0wdgXG
+            >- 3 -> https://www.youtube.com/playlist?list=PLHiZ4m8vCp9MJDxMOzhYVuTrO1b5n-Tq_
+            >- 4 -> https://www.youtube.com/playlist?list=PLHiZ4m8vCp9NwCTJowt0HTCNRi5K6w4nv
+
+|> Programming Hero -> 👉 
+
+|> Problem Solving
+    * https://www.youtube.com/playlist?list=PLpc_YvcwbxaSn6jn0VaTcG8A0Grgs1GSB
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+    

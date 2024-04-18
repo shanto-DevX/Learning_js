@@ -1,0 +1,15 @@
+/*
+ * Must Use DoubleQuote
+ */
+
+{
+  "name": "shanto",
+  "age": 24,
+  "email": "js@gmail.com",
+  "IsProgrammer": true,
+  "hobbies": ["Programming", "Designing", "Web"],
+  "address": {
+    "city": "Dhaka",
+    "Zone": "NarayanGonj"
+  }
+}

@@ -1,0 +1,3 @@
+TypeError: Assignment to constant variable.
+-> const Variable বার বার এসাইন করা যায়না যখন const একের অধিক বার এসাইন করা হবে তখন TypeError : Assignment to constant variable আসবে।
+-> https://www.zipy.ai/blog/debug-javascript-typeerror-assignment-to-constant#toc-introduction

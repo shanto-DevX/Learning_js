@@ -1,0 +1,59 @@
+✅ Introduction
+✅ Course Structure
+✅ JavaScript Overview
+✅ Code Execution
+✅ Dev Environment Setup
+✅ Connect JS to HTML
+✅ Using Console & Comments
+✅ Mastering Variables
+✅ Working with Numbers
+✅ Grasping Booleans
+✅ Comparison Operators
+✅ Manipulating Strings
+✅ Type Conversion
+✅ Conditional Statements
+✅ Switch Statements
+✅ For Loop
+✅ While Loop
+✅ Do-While Loop
+✅ Logical Operations
+✅ Arrays Introduction
+✅ Array Techniques
+✅ JavaScript Objects
+✅ Functions Basics
+✅ Function Types
+❌ Callback Functions
+✅ Variable Scope
+✅ Object Methods
+❌ JSON Handling
+✅ Dates & Time
+✅ setInterval & setTimeout
+------------------------------------------------
+✅ Intermediate Setup
+✅ Template Strings -> ES6
+✅ Arrow Functions
+✅ Enhanced Object Literals
+✅ Default Function Perameter
+✅ Destructuring
+    👉 ✅   array Destructuring
+    👉 ✅   function Destructuring
+    👉 ✅   nested Destructuring
+    👉 ✅   object Destructuring
+    👉 ✅   using Default Function Perameter & Renaming Variables
+✅ Ternary Operator
+✅ For-In Loop
+✅ For-Of Loop
+✅ forEach Method
+✅ map Helper
+✅ filter Helper
+✅ find Helper
+✅ every & some Helpers
+❌ reduce Helper
+
+✅ Map Data Structure
+✅ Sets Data Structure
+✅ Symbols in JavaScript
+
+----------------------------------------------------------
+
+👉 Introduction to DOM
