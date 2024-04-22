@@ -26,6 +26,4 @@ let formateDate = (date = new Date()) => {
 
 console.log(formateDate());
 
-// 11:41 / 14:06
 
-//

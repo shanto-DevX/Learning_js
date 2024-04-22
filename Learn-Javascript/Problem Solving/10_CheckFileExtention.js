@@ -14,11 +14,17 @@ let x = "index.html.js";
 let result = checkExtention(x);
 console.log(result); */
 
-function checkExtention(fileName) {
+/* function checkExtention(fileName) {
   return fileName.slice(fileName.lastIndexOf("."));
 }
 
 console.log(checkExtention("Index.html"));
 console.log(checkExtention("Index.js"));
 console.log(checkExtention("Index.css"));
-console.log(checkExtention("Index.scss"));
+console.log(checkExtention("Index.scss")); */
+
+function checkExtention(str) {
+  return str.slice(str.lastIndexOf("."));
+}
+
+console.log(checkExtention("hello.html"));

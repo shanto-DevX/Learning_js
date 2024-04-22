@@ -5,3 +5,7 @@ let srtIs = (str) =>
     .join("");
 
 console.log(srtIs("Shanto"));
+
+/*
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+ */
