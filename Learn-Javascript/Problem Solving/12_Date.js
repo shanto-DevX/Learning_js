@@ -16,8 +16,8 @@ console.log(date); */
 console.log(formatDate()); */
 
 let formateDate = (date = new Date()) => {
-  const days = date.getDate() + 1;
-  const month = date.getMonth();
+  const days = date.getDate();
+  const month = date.getMonth() + 1;
   const year = date.getFullYear();
 
   //   return `${days}/${month}/${year}`;
@@ -25,5 +25,3 @@ let formateDate = (date = new Date()) => {
 };
 
 console.log(formateDate());
-
-
