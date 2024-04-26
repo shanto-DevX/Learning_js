@@ -1,0 +1,44 @@
+* JSON -> Javascript Object Notation
+* JSON Human Readable
+
+-> {"key":"Value"}
+-> Use Always Double Quote
+-> .JSON file এর মধ্যে JSON লেখা হয়
+-> JSON.parse(VariableName) দিয়ে, JSON কে Object এ রূপান্তর করা যায় এবং ডাটার মধ্যে এক্সেস করা যায়।
+
+
+
+-------------------------
+
+myJson = `{
+  "key": "value",
+  "score": 11.75,
+  "isAdmin": false,
+  "isNull": null,
+  "shopItem": ["Food", "Chips", "Oil"],
+  "myObj": {
+    "name": "Shanto",
+    "Learning": "JSON",
+    "shopItems": [
+      "Foods",
+      "Chipss",
+      {
+        "a": true,
+        "b": 1,
+        "c": "A",
+        "d": "a"
+      }
+    ]
+  }
+}`;
+
+JSON.parse(myJson)
+
+parsed = JSON.parse(myJson)
+parsed["isAdmin"]-> access JSON
+
+parsed['shopItem'][2] -> access array
+
+-> 
+allJson = JSON.parse(myJson)
+allJson['myObj']['shopItems'][2]['a'] :-> true
