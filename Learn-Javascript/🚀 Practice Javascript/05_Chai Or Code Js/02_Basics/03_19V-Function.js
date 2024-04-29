@@ -38,7 +38,7 @@ console.log(x);
 let message = loginUserMessage();
 console.log(message); */
 
-function loginUserMessage(userName = "Abcd") {
+/* function loginUserMessage(userName = "Abcd") {
   //   if (userName === undefined)
   if (!userName) {
     return "Plese Enter a UserName";
@@ -49,4 +49,57 @@ function loginUserMessage(userName = "Abcd") {
 
 // let message = loginUserMessage("Shanto");
 let message = loginUserMessage();
-console.log(message);
+console.log(message); */
+
+// ========================================================
+
+// -> Rest Operator methods
+function calculateCardPrice(val1, val2, ...num1) {
+  return val1, val2, num1;
+}
+
+// console.log(calculateCardPrice(1, 2, 200, 100, 500));
+
+/* const user = {
+  userName: "shanto",
+  price: 199,
+};
+
+function handelObject(anyObject) {
+  console.log(
+    `Username is ${anyObject.userName} & Price is ${anyObject.price}`
+  );
+}
+
+// handelObject(user);
+handelObject({
+  userName: "HelloShanto",
+  price: 399,
+}); */
+
+/* const myNewArray = [200, 400, 100, 600];
+
+function returnSecondValue(getarray) {
+  return getarray[1];
+}
+
+// console.log(`Second Value : ${returnSecondValue(myNewArray)}`);
+console.log(`Second Value : ${returnSecondValue([100, 200, 300, 400])}`);
+ */
+
+/* function showObject(myObjects) {
+  return `UserName: ${myObjects.userName} & Is LogIN : ${myObjects.isLogIn}`;
+}
+
+console.log(
+  showObject({
+    userName: "Shanto",
+    isLogIn: true,
+  })
+); */
+
+function showArray(arrayIs) {
+  return arrayIs[2];
+}
+
+console.log(showArray([200, 100, 300, 400]));
