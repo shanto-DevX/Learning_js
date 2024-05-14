@@ -1,0 +1,154 @@
+এখানে সব গুলো DOM এর কোড গুলো থাকবে
+
+👉 taregt Class & Id
+
+➡️ document.getElementById("IdName")
+        ➡️ .id
+        ➡️ .className
+        ➡️ .getAttribute('id') : এইগুলো এলিমেন্ট এর ক্লাস এবং আইডি খুজে বের করে।  
+        ➡️ .getAttribute('class') : এইগুলো এলিমেন্ট এর ক্লাস এবং আইডি খুজে বের করে।  
+        ➡️ .setAttribute('class'. "newClass oneMoreNewClass") -> এইটা নতুন ক্লাস এড করবে।
+
+
+👉 Store in Varible Class & Id
+
+➡️ const VarName =  document.getElementById("IdName")
+    ➡️ easy Acess -> varName 
+
+
+
+👉 Style HTML Element 
+
+➡️ const VarName =  document.getElementById("IdName")
+    ➡️ easy Acess -> varName 
+    
+    -> varName.Style.styleElements = "value"
+
+
+👉 select Content HTML Element 
+
+➡️ const VarName =  document.getElementById("IdName")
+    ➡️ easy Acess -> varName 
+
+    ➡️ Target Content
+    . varName.textContent
+        -> এখানে সব কন্টেন্ট দেখাবে, CSS style দিয়ে ভিসিবল না করলে ও সেইটা দেখাবে।
+    . varName.innerText
+        -> এখানে সব কন্টেন্ট দেখাবে না, Browser এ যেইটা দেখাচ্ছে সেইটা দেখাবে।
+    . varName.innerHTML
+        -> এখানে সব কন্টেন্ট দেখাবে এবং সব HTML tag দেখাবে।   
+
+
+👉 Query Selector :
+
+    ➡️ document.querySelector('tags/Id/Class/ elm:first-child')
+
+        👉 পেজের প্রথম HTML tag আসবে, সেইটা সিলেক্ট করা হবে এবং একটাই সিলেক্ট করে ।
+        👉 এখানে css এ যেভাবে এলিমেন্ট সিলেক্ট করা হয়, সেই ভাবে এখানে querySelector দিয়ে সিলেক্ট করতে হয়। 
+        👉 document.querySelector('h2').style.color = "red" also add style
+
+    ➡️ document.querySelectorAll('tag/or/#Id/.Class') 
+        👉 পেজের সিলেক্ট করা সব HTML tag আসবে, যেইটা সিলেক্ট করা হবে।
+
+
+
+👉 NodeList & html collection not a pure array
+👉 Prototype এ গেলে দেখাযাবে কি কি মেথড ব্যবহার করা যাবে। 
+
+👉 NodeList এ স্টাইলঃ
+    ➡️ const tempList = document.querySelectorAll('li')
+    ➡️ tempList[0].style.color = "red"
+
+    👉 ForEach use 
+    const tempList = document.querySelectorAll('li')
+    tempList.forEach(function(item) {
+        item.style.backgroundColor = "pink"
+    })
+
+👉 html collection কে array te convert
+
+    const tempClassList = document.getElementsByClassName('list-item')
+    const myConcvertedArray = Array.from(tempClassList)
+    myConcvertedArray.forEach((i) => console.log(i)) -> Print All
+    myConcvertedArray.forEach((i) => console.log(i.innerText)) -> Print All text
+    myConcvertedArray.forEach((i) => i.style.color="red") -> Print All text
+
+
+
+const tempClassList = document.getElementsByClassName('list-item')
+const myConcvertedArray = Array.from(tempClassList)
+myConcvertedArray.forEach((i) => i.style.color="red")
+myConcvertedArray.forEach((i) => i.style.backgroundColor="red")
+myConcvertedArray.forEach((i) => i.style.backgroundColor="White")
+myConcvertedArray.forEach((i) => i.style.fontSize="28px")
+
+
+========================================================================
+
+🚀 Create New Elements
+
+=> const parentIs = document.querySelector(".parent");
+    console.log(parentIs);
+
+    👉 children 
+    console.log(parentIs.children);
+    console.log(parentIs.children[1]);
+    console.log(parentIs.children[1].innerHTML);
+
+    .children 
+    * এইটা HTMLCollection গুলো "array Like element" তে প্রকাশ করে। 
+
+    -------------------------------------------------------------
+    
+    👉 firstElementChild / lastElementChild 
+    console.log(parentIs.firstElementChild);
+    console.log(parentIs.lastElementChild);
+    * এই গুলো দিয়ে প্রথম ও শেষের ডাটা পাওয়া যায় 
+
+    👉 .parentElement
+    * এইটা দিয়ে সহজেই পেরেন্ট কে টার্গেট করে যায় 
+    * যেমন প্রথমে .day class কে টার্গেট করলাম, এখন চাচ্ছি এর প্রেন্ট ক্লাসকে টার্গেট করতে তখন এইটা ব্যবহার হবে। 
+
+    👉 .nextElementSibling
+    * এইটা দিয়ে সহজেই সিব্লিং বা [এলিমেন্ট এর ভাই বোন] কে টার্গেট করে যায় 
+    * যেমন প্রথমে .day class কে টার্গেট করলাম, এখন চাচ্ছি এর পরের এলিমেন্ট কে  টার্গেট করতে তখন এইটা ব্যবহার হবে। 
+
+    👉 .childNodes
+    * এইটা দিয়ে একটা এলিমেন্ট এর ডাটা গুলো NodeList আকারে বা ট্রি আকারে দেখায়। 
+    * কমেন্ট, লাইন ব্রেক ও দেখায় 
+
+
+=> একটা পেজে কিভাবে একটা এলিমেন্ট তেরি করে সেইটায় ভিবিন্ন এট্রিবিউট দিতে হয় এবং কিভাবে সেইটা পেজে দেখাতে হয়।
+
+    🚀 Craete Div
+        let divX = document.createElement("div");
+    
+    🚀 Create Class
+        divX.className = "main";
+
+    🚀 Create Id
+        divX.id = "myId";
+
+    🚀 Create Id with math function
+        divX.id = parseInt(Math.random() * 10);
+        divX.id = Math.round(Math.random() * 10 + 1);
+
+    🚀 Create Attribute
+        divX.setAttribute("title", "Generated Title");
+        divX.style.backgroundColor = "Green";
+    
+    🚀 Add style
+        divX.style.padding = "12px";
+
+    🚀 Add text inside html element [1]
+    // divX.innerHTML = "Learning DOM";
+
+    🚀 Add text inside html element [2 => Parefared]
+    let addText = document.createTextNode("Learning DOM");
+    divX.appendChild(addText);
+
+    console.log(divX);
+    // console.log((divX.innerHTML = "Shanto"));
+
+    🚀 Add element in the body
+        document.body.appendChild(divX);

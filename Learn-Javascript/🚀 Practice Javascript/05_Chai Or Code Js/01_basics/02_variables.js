@@ -1,5 +1,5 @@
 /*
- * var      |> issue black scope & functional Scope
+ * var      |> issue block scope & functional Scope
  * let      |> Not declearable but replace Data
  * const    |> Not Changable
  */

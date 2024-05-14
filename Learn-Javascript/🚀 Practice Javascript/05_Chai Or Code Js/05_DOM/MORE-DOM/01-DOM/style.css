@@ -1,0 +1,15 @@
+body {
+  background-color: #212121;
+  color: #fff;
+  width: 80%;
+  margin: auto;
+}
+
+.conatiner {
+  width: 60%;
+  margin: 50px auto;
+  background: #353535;
+  border: 1px solid #fff;
+  padding: 40px;
+  border-radius: 15px;
+}

@@ -1,0 +1,69 @@
+Dom নিয়ে কিছু প্রশ্নঃ
+
+১ -> why use [console dir & log]
+2 -> what is [NodeList & HTMLCollection]
+
+
+------------------------------------------------------
+
+✅ console.log(): ব্রাউজার কনসল-লগ এর মধ্যে সুন্দর ভাবে দেখায় [text with Html]
+<div class="box" bis_skin_checked="1">new unique value 3</div>
+
+✅console.dir():ব্রাউজার কনসল-লগ এর মধ্যে object এর মধ্যে সব প্র্যোপার্টি গুলো দেখায়।
+
+------------------------------------------------------
+
+-> document.getElementById() => Element object
+-> document.getElementsByClassName() => Html Collection
+-> document.getElementsByTagName() => Html Collection
+-> document.querySelector() => Element Object
+-> document.querySelector() => Node List
+
+------------------------------------------------------
+
+let htmlCollections = document.getElementsByClassName("btn");
+console.log(htmlCollections);
+
+👉 HTMLCollection
+    => Elements collection
+
+
+let nodeLists = document.querySelectorAll(".btn");
+console.log(nodeLists);
+
+👉 NodeList
+    => Node
+
+
+=> Node Vs element
+=> প্রতিটা এলিমেন্ট ই নোড কিন্তু প্রতিটা নোড এলিমেন্ট না 
+=> element হচ্ছে ভিবিন্ন [টেগ গুলো]
+=> Node List হচ্ছে যা যা দিয়ে [Tag / comment / text / space] যা তেরি করা হয় সেইগুলো। 
+    -> document.querySelector("body").childNodes দিলে সব নোড দেখাবে
+
+
+
+---------------------------------------------------------
+
+* 3 type of NODE
+    => TextNode
+    => CommentNode
+    => elementNode
+
+HTML Terminology
+
+👉 <a href="index.html">Home</a>
+ -> a is the tag
+ -> href is the attribute
+ -> index.html is the attribute value
+ -> Home is the text.
+
+
+
+   <body>
+    <h1>An element node</h1>    => elementNode
+    <!-- a comment node -->     => CommentNode
+    A text node.                => TextNode
+  </body>
+
+-------------------------------------

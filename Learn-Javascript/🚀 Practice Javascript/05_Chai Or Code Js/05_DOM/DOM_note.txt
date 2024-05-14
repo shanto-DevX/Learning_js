@@ -1,0 +1,60 @@
+--> DOM Menupulation <--
+===============================
+
+=> Document Dayogram -- HTML
+
+Document Object Module
+  -------------------
+  |     window      |  -> Node
+  -------------------
+           ⬇️
+  -------------------
+  |     Document    |  -> Node
+  -------------------
+           ⬇️
+  -------------------
+  |       HTML      |  -> Node
+  -------------------
+           ⬇️
+        2 Child
+  1-➡️ Head      
+  ⬇️
+  * title -> text node / value
+  * meta  -> attribute
+
+  2-➡️ Body
+  ⬇️
+  * div ➡️ attribute আছে
+        * h1  -> attribute / text node
+        * p  -> text node
+
+
+
+
+
+attribute :- html Tag এর মধ্যে (নাম দিয়ে"") এ কিছু লেখা হলে সেইটা এট্রিবিউট। যেমনঃ ক্লাস, আইডি, etc..
+
+text node :- html Tag এর মধ্যে সুধু টেক্সট থাকলে সেইটা টেক্সট নোড বলে
+
+
+
+
+
+
+
+
+
+
+
+=> window 
+ * window হচ্ছে Global Object এইটা ব্রাউজার থেকে তেরি হয়।
+ * window হচ্ছে Browser Object 
+
+একটা পেজে "Inspact Element" করে, Console এ গিয়ে
+➡️ console.log(window)
+➡️ console.log(window.document OR document) 
+    :- এখানে HTML এর পেজ দেখাবে
+➡️ console.dir(window.document OR document) 
+    :- এইটা document এর প্রোপার্টি এবং মেথড দেখাবে 
+
+Window --> Document --> model --> HTML
