@@ -152,3 +152,110 @@ myConcvertedArray.forEach((i) => i.style.fontSize="28px")
 
     🚀 Add element in the body
         document.body.appendChild(divX);
+
+
+
+----------------------------------------------------------------------
+***************       Javascript Events         *********************
+----------------------------------------------------------------------
+
+Javascript Events:
+
+-> ওয়েব পেজের মধ্যে কোথায় ক্লিক করলে, যে কাজ হবে সেইটাই হচ্ছে ইভেন্ট । একটি ফ্রম এর মধ্যে সাবমিট বাটন এর মধ্যে ক্লিক করলে যে কাজ হবে সেইটা হচ্ছে ইভেন্ট । 
+
+=> DOM দিয়ে ইভেন্ট হেন্ডেলিং করা হয়। 
+
+
+
+Populer Events
+👉 Mouse events [click, double click, etc.]
+👉 keyboard events [keypress, keyup, keydown]
+👉 form events [submit etc]
+👉 print events & many mores..
+
+https://developer.mozilla.org/en-US/docs/Web/Events
+
+
+
+👉 Inline Event handeling |> যেইটা HTML পেজের মধ্যে ব্যবহার হয়। ❌
+
+➡️ onlclick - onclick="console.log('button was clicked'); alert('hello clickd')
+    |> single click এ কাজ করবে 
+
+➡️ ondblclick - ondblclick="console.log('button was clicked'); alert('hello clickd') 
+    |> Double click এ কাজ করবে 
+
+
+👉 Event handeling in js
+
+node.event = () => {
+    //handle here
+}
+
+btn.onlclick = () => {
+    //handle here
+}
+
+
+⭐ Inline events or js events এর মধ্যে js events কাজ করবে
+⭐ একি এলিমেন্ট এর মধ্যে একাধিক ইভেন্ট ব্যবহার করলে আগের টা ওভার রাইট হয়ে যাবে 
+
+
+👉 Event Object
+* its a special Object that has details about the event
+* all event handlers have access to the event Object's peoperties and methods
+
+node.event=(e) => {
+    //handle here
+}
+
+e.target, e.type, e.clientX, e.clientY
+
+👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
+let box = document.querySelector("#box2");
+box.onmouseover = (eve) => {
+  console.log(eve);
+  console.log(eve.type);
+  console.log(eve.target);
+  console.log(eve.clientX, eve.clientY);
+  console.log(eve.composed);
+};
+
+
+👉 Event listeners
+
+node.addEventListerner(event,callback)
+node.removeEventListerner(event,callback)
+
+⭐ multiple event ব্যবহার করা যায়, একটি এলিমেন্ট এর মধ্যে।
+⭐ removeEventListerner দিয়ে কোন ইভেন্ট রিমোভ করতে হলে সেই ইভেন্ট এর callback আর removeEventListerner callback সেম থাকতে হবে। 
+
+let btn = document.querySelector("#btn1");
+
+const h3 = () => {
+  console.log("Button was clicked 3");
+};
+btn.addEventListener("click", h3);
+
+
+btn.removeEventListener("click", h3);
+
+
+
+⭐ Js এর মধ্যে যত ইভেন্ট'স আছে সেইগুলো সিকুয়েনশিয়ালি রান করে 
+⭐ সিকুয়েনশিয়ালি রান Program
+
+
+👉 Event Bubbling
+
+-> Event Bubbling হচ্ছে, আমি যখন একটা ইভেন্ট এর মধ্যে ক্লিক করি তখন সেইটা তার উপরের পেরেন্ট এর মধ্যেও কাজ করে।  [container -> container_child -> child ] এখন এখানে child ক্লিক করলে সে উপরের সবগুলোতে ক্লিক হয়ে যাবে এবং এইটা Event Bubbling।
+
+-> Event Bubbling বন্ধ করার নিয়ম।
+
+      document.querySelector(".class").addEventListener("click", (e) => {
+        e.stopPropagation();
+        alert("Click ON I'm container");
+      });
+
+      => CallBackName.stopPropagation() 
+      => এখন এখানে যেইতায় ক্লিক করবো সেইটায় কাজ হবে অন্য গুলোতে কাজ হবে না বা ইভেন্ট বাবলিং হবে না। 
