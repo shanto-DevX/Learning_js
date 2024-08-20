@@ -2,7 +2,7 @@
 
 ---
 
-## Object
+## ✨ Object
 
 ### Object Create in 3 way
 
@@ -76,7 +76,7 @@ console.log(personInfo.getName());
 
 ---
 
-## Class
+## ✨ Class
 
 ```js
 class person {
@@ -98,7 +98,7 @@ console.log(person1.isLogin);
 console.log(person1.getName());
 ```
 
-## class Constructer
+## ✨ class Constructer
 
 - Constructor
 - Constructor name should be Constructor
@@ -116,12 +116,12 @@ class personInfo {
 let personObje = new personInfo("Shanto", true);
 ```
 
-## getter & Setter
+## ✨ getter & Setter
 
-- setter is set the value & Getter get the setter value
-- Setter need value in Parameter
-- Getter no need value in Parameter & return setter value
-- setter value is special method & assign value using = assingment Operator
+- 📝 setter is set the value & Getter get the set Value from setter value
+- 📝 Setter need value in Parameter
+- 📝 Getter no need value in Parameter & return setter value
+- 📝 setter value is special method & assign value using = assingment Operator
 
 ```js
 class personInfo {
@@ -143,9 +143,12 @@ console.log(personInfoIs.getPersonInfo);
 
 ---
 
-## Static Keywords
+## ✨ Static Keywords
 
-- 
+- 📝 ক্লাস থেকে কোন প্রোপারটি Object তেরি না করে এক্সেস করতে চাইলে Static Keyword ব্যবহার করা যাবে
+- 📝 Shared Peroperties -> ক্লাসের মধ্যে কোন function বিভিন্ন্য যাগায় ব্যবহার করতে চাইলে Static Keyword ব্যবহার করে সেইটা করা যায়
+- 📝 Utility Fucntion -> from Validition
+- 📝 Memory Efficiency
 
 ```js
 class person {
@@ -168,7 +171,7 @@ console.log(person.getInfo());
 
 ---
 
-## Inhertance
+## ✨ Inhertance
 
 - উত্ররাধিকার সূত্রে পাওয়া কোন কিছুকে Inhertance বলে।
 - ParentClass এর ডাটা childClass ক্লাস এক্সেস দিতে চাইলে ParentClass ক্লাস কে extends করতে হবে।
@@ -199,4 +202,139 @@ console.log(parentclassInfo.num1);
 console.log(parentclassInfo.num2);
 parentclassInfo.addNumber();
 ```
-````
+
+---
+
+## ✨ Inharitance Constructor with Parameter
+
+       ✨ constructor inside only parent class
+       ✨ constructor inside only parent class pass parameters
+
+       ✨ constructor inside only child class
+       ✨ constructor inside only child class pass parameters
+
+       ✨ constructor inside both parent & child class
+       ✨ constructor inside both child & parent class pass parameters
+
+---
+
+- 👉 constructor inside only parent class
+  - 📝 child class get access in Parent Class from constructor
+
+```js
+class Parent {
+  constructor() {
+    console.log("I'm Constractor of Parent Class");
+  }
+}
+class child extends Parent {}
+
+new Parent();
+new child();
+```
+
+---
+
+- 👉 constructor inside only parent class pass parameters
+  - 📝 child class get access in Parent Class with constructor & also get access parameter Data
+  - 📝 child & Parent Both get access parameter Data
+
+```js
+class Parent {
+  constructor(msg) {
+    console.log("I'm Constractor of Parent Class & The message is :" + msg);
+  }
+}
+class child extends Parent {}
+
+new Parent(" Hello World Parent Message");
+new child(" Hello World Child Message");
+```
+
+---
+
+- 👉 ✅ constructor inside only child class
+  - 📝 Child এর মধ্যে constructor দিতে চাইলে super() কিওয়ার্ড ব্যবহার করতে হবে।
+  - 📝 Child এর মধ্যে constructor দিলে সেইটা পেরেন্ট ক্লাস ব্যবহার করতে পারবে না
+
+```js
+class Parent {}
+
+class child extends Parent {
+  constructor() {
+    super();
+    console.log("I'm Constractor of Child Class");
+  }
+}
+
+new Parent();
+new child();
+```
+
+---
+
+- 👉 ✅ constructor inside only child class & pass parameters
+  - 📝 Child এর মধ্যে constructor দিলে সেইটা পেরেন্ট ক্লাস ব্যবহার করতে পারবে না এবং constructor এ পেরামিটার দিলে সেইটাও পেরেন্ট ক্লাস এক্সেস করতে পারবে না
+
+```js
+class Parent {}
+
+class child extends Parent {
+  constructor(mes) {
+    super();
+    console.log("I'm Constractor of Child Class & Message is : " + mes);
+  }
+}
+
+new Parent(" From Parent");
+new child(" From Child");
+```
+
+---
+
+- 👉 constructor inside both parent & child class
+  - 📝 Child & Parent Class এর মধ্যে constructor দিলে সেইটা উভই পাবে
+  - 📝 Child constructor কে কল করলে পেরেন্ট এর constructor ও কল করবে এবং Child & Parent এর উভই constructor দেখাবে।
+
+```js
+class Parent {
+  constructor() {
+    console.log("I'm Constractor of Parent Class");
+  }
+}
+
+class child extends Parent {
+  constructor() {
+    super();
+    console.log("I'm Constractor of Child Class");
+  }
+}
+
+new Parent();
+new child();
+```
+
+---
+
+- 👉 constructor inside both child & parent class pass parameters
+  - 📝 Child & Parent Class এর মধ্যে constructor এর parameters দিলে সেইটা উভই পাবে
+  - 📝 Child constructor কে কল করলে পেরেন্ট এর constructor parameters Undefined দেখাবে এবং সুধু চাইল্ড এর parameters প্রিন্ট হবে
+    - কারনঃ বাবার থেকে ছেলে পাবে কিন্তু ছেলের থেকে বাবা পাবে না।
+
+```js
+class Parent {
+  constructor(msg) {
+    console.log("I'm Constractor of Parent Class & Message : " + msg);
+  }
+}
+
+class child extends Parent {
+  constructor(msg) {
+    super();
+    console.log("I'm Constractor of Child Class & Message : " + msg);
+  }
+}
+
+// new Parent(" Message From Parent");
+new child(" Message From Child");
+```
