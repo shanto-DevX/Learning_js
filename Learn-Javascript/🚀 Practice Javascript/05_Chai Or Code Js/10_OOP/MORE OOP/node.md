@@ -171,9 +171,9 @@ console.log(person.getInfo());
 
 ---
 
-## ✨ Inhertance
+## ✨ Inheritance
 
-- উত্ররাধিকার সূত্রে পাওয়া কোন কিছুকে Inhertance বলে।
+- উত্ররাধিকার সূত্রে পাওয়া কোন কিছুকে Inheritance বলে।
 - ParentClass এর ডাটা childClass ক্লাস এক্সেস দিতে চাইলে ParentClass ক্লাস কে extends করতে হবে।
   `class childClass extends ParentClass {}`
 
@@ -205,7 +205,7 @@ parentclassInfo.addNumber();
 
 ---
 
-## ✨ Inharitance Constructor with Parameter
+## ✨ Inheritance Constructor with Parameter
 
        ✨ constructor inside only parent class
        ✨ constructor inside only parent class pass parameters
