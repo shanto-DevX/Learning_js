@@ -2,6 +2,29 @@
 
 ---
 
+## ✨ WHat I LEarn ABout OOP In JS
+
+- [x] Object
+  - [x] Object Literal
+  - [x] Object instance
+  - [x] Object Constructor
+- [x] Class
+  - [x] Class Constructor
+- [x] getter & Setter
+- [x] Static Keyword
+- [x] Inharitance
+  - [x] Inharitance with construtor 6 way
+- [x] Method Overriding
+- [x] Method Overloading
+- [x] Polymorphism
+- [x] abstraction
+- [x] Encapsulation
+  - [x] Encapsulation Using closures
+  - [x] Encapsulation Using ES6
+  - [x] Encapsulation Using Constructor
+
+---
+
 ## ✨ Object
 
 ### Object Create in 3 way
@@ -337,4 +360,206 @@ class child extends Parent {
 
 // new Parent(" Message From Parent");
 new child(" Message From Child");
+```
+
+---
+
+## Method Overriding
+
+- একটা ডাটা কে অন্য ডাটা দিয়ে রিপ্লেস করে দেওয়া
+- Parent Method এর ডাটা কে child method এ অন্য ডাটা দিয়ে রিপ্লেস করে দেওয়া, সেইটাকে Method OverRidng বলে
+- Parent Method এর ডাটা কে child method OverRide করলে, তখন child Parent এর ডাটা পাবে না।
+
+```js
+class parent {
+  addNum() {
+    let num1 = 10;
+    let num2 = 20;
+    console.log(num1 + num2);
+  }
+}
+
+class child extends parent {
+  addNum() {
+    let num1 = 120;
+    let num2 = 120;
+    console.log(num1 + num2);
+  }
+}
+
+/* let childObj = new child();
+childObj.addNum(); */
+
+let parentObj = new parent();
+parentObj.addNum();
+```
+
+---
+
+## Method Overriding
+
+- একটি ক্লাসের মধ্যে একি নামের একাধিক মেথড কল করা হচ্ছে মেথড ওভারলোডিং
+- JavaScript overloading সাপোর্ট করে না।
+
+```js
+class parentClass {
+  addNumber(n1, n2, n3, n4) {
+    if (arguments.length === 1) {
+      console.log("Print 1 Argument : " + n1);
+    } else if (arguments.length === 2) {
+      console.log("Print 2 Argument : " + n1, n2 + " : " + (n1 + n2));
+    } else if (arguments.length === 3) {
+      console.log("Print 3 Argument : " + n1, n2, n3 + " : " + (n1 + n2 + n3));
+    } else if (arguments.length === 4) {
+      console.log(
+        "Print 3 Argument : " + n1,
+        n2,
+        n3,
+        n4 + " : " + (n1 + n2 + n3 + n4)
+      );
+    }
+  }
+}
+
+let numIs = new parentClass();
+numIs.addNumber(10);
+numIs.addNumber(10, 20);
+numIs.addNumber(10, 20, 30);
+numIs.addNumber(10, 20, 30, 40);
+```
+
+---
+
+## Polymorphism
+
+- Polymorphism = বহুরূপতা
+- কোডিং এর মধ্যে ইনহেরিটেন্স ,মেথড ওভারলোডিং এবং ওভারররাইডিং এর মধ্যে যখন এইগুলো ব্যবহার হয় সেইটাকে Polymorphism বলে
+- Polymorphism একটা কন্সেপ্ট
+
+---
+
+## abstraction
+
+- কোন অবজেক্ট, ইন্সটেন্স থাকে না সেইটা abstraction
+- পেরনেট ক্লাস বা কোন ক্লাসের অবজেক্ট, ইন্সটেন্স তেরি করা না যায় সেইটা বন্ধ করে দেওয়া, সেটাই হচ্ছে abstraction
+- পেরনেট ক্লাস কে abstraction করে রাখলে সেইটার চাইল্ড ক্লাস এর মাধ্যমে অব্জেক্ট তেরি করে মেথড কল করা যায়
+
+* https://medium.com/@tanish_rajput/abstraction-in-javascript-e9e56a3650dd
+
+```js
+class parent {}
+class child extends parent {}
+```
+
+---
+
+## ✨ Encapsulation
+
+- Encapsulation
+- Grouping Data & action একসাথে রেখে একটা বান্ডিল করা হচ্ছে Encapsulation
+- Hiden Complexity
+- Data Protuction
+- Controlled Access
+- Enhances Maintainbility
+
+👉 HOW ACHIVE Incapculation
+
+- closures
+- Constructor
+- ES6 Class
+
+##### 👨‍💻⭐ Encapsulation Using closures
+
+```js
+function createCounter() {
+  let count = 0;
+
+  return {
+    increment: function () {
+      count++;
+    },
+    decrement: function () {
+      count--;
+    },
+
+    getCount: function () {
+      return count;
+    },
+  };
+}
+
+const counter = createCounter();
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+console.log(counter.getCount());
+
+counter.decrement();
+counter.decrement();
+console.log(counter.getCount());
+```
+
+##### 👨‍💻⭐ Encapsulation Using ES6
+
+```js
+class createCounter {
+  #count = 0;
+  increment() {
+    this.#count++;
+  }
+  decrement() {
+    this.#count--;
+  }
+  getCount() {
+    return this.#count;
+  }
+}
+
+let numIs = new createCounter();
+numIs.increment();
+numIs.increment();
+numIs.increment();
+numIs.increment();
+numIs.increment();
+console.log(numIs.getCount());
+
+numIs.decrement();
+numIs.decrement();
+
+console.log(numIs.getCount());
+```
+
+##### 👨‍💻⭐ Encapsulation Using Constructor Functions
+
+```js
+function createCounter() {
+  let count = 0;
+
+  this.increment = () => {
+    count++;
+  };
+
+  this.decrement = () => {
+    count--;
+  };
+
+  this.getCount = () => {
+    return count;
+  };
+}
+
+let num = new createCounter();
+// console.log(num);
+
+num.increment();
+num.increment();
+num.increment();
+num.increment();
+num.increment();
+console.log(num.getCount());
+num.decrement();
+num.decrement();
+console.log(num.getCount());
 ```
