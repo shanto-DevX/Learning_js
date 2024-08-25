@@ -66,7 +66,7 @@ const size80 = makeTextSizer(80);
 
 btn.addEventListener("click", size80); */
 
-function counter() {
+/* function counter() {
   let count = 0;
   return {
     increace: function () {
@@ -85,4 +85,15 @@ let x = counter();
 x.increace();
 x.increace();
 x.increace();
-console.log(x.getNumber());
+console.log(x.getNumber()); */
+
+function capitalIs(capital) {
+  return function (intrest) {
+    return (capital * intrest) / 100;
+  };
+}
+
+const business1 = capitalIs(100000);
+console.log(business1);
+let intrest = business1(25);
+console.log(intrest);
