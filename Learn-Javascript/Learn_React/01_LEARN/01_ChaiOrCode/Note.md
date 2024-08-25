@@ -16,14 +16,22 @@
 ## 📝 NOTE START
 
 ✨ Learn First From Document
-
 👉 For Web Devlopment :- React DOM
 👉 For App Devlopment :- React Native
+
+- What is Recat js
+  - js libraray & build Front end, building UI
+  - React component based Architecture :- একটা ওয়েব পেজে তেরির জন্য ছোট ছোট অনেক কম্পোনেন্ট থাকে, এবং সেই কম্পোনেন্ট গুলো একত্রে এইটি ওয়েব সাইট বানানো হয়।
+
+---
 
 #### React Install Process
 
 - 1️⃣ Terminal -> npx create-react-app "FileName" ❌!Recomended
 - 2️⃣ Install With Vite
+
+  - 2️⃣ Vite is asset Bundling & give 
+  - 2️⃣ Modules with depenencies -> Static Assets
 
   - npm create vite@latest
   - y
@@ -43,8 +51,8 @@
         - 👉 > vite dev
 
         ### Clean File
-
-        - ## src
+          - Recomend Edit Readme FIle
+          - Most Of Time Using src
           - Delete assets file
           - only Have -> app.jsx & main.jsx
 
@@ -68,8 +76,3 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 ```
-
-### Quote
-
-- Recomend Edit Redme FIle
-- Most Of Time Using src
