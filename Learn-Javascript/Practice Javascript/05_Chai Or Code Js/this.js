@@ -2,9 +2,8 @@
     |> this keyword
     
     * this হচ্ছে, একটা অব্জেক্ট এর মধ্যে [key:value] থাকে এখন আমি যদি এর অব্জেক্ট এর মধ্যে কোন key এর ভেল্যু চাই তাহলে this.key এভাবে দিতে হবে এবং এইটা ওই key এর ভেল্যুকে সেইলেক্ট করবে 
-    * this হচ্ছে, কোন অব্জেক্ট এর মধ্যে  াছে সেইটা।
-    
-
+    * this হচ্ছে, কোন অব্জেক্ট এর মধ্যে আছে সেইটা।
+  
     * In an object method, this refers to the object.
 
     * Alone, this refers to the global object.
@@ -32,7 +31,7 @@
   lastname: "Shanto",
   id: 3548,
 
-  //fullNameIs a methods so need () -< Object Method Binding
+  //fullNameIs a methods so need () for call -< Object Method Binding
   // -> this target on person
   fullNameIs: function () {
     return this.firstname + " " + this.lastname;
@@ -201,7 +200,7 @@ console.log(user.farewellX()); //shanto */
 
 // ---------------
 
-let calculate = {
+/* let calculate = {
   //   a: 10,
   //   b: 20,
 
@@ -218,4 +217,44 @@ let calculate = {
 };
 
 console.log(calculate.sum());
-console.log(calculate.mul());
+console.log(calculate.mul()); */
+
+// -------------
+/*
+ * self প্রোপারটিকে বুজাতে this ব্যবহার হয়.
+ * js object এর সাথে এসোশিয়েট হয়ে থাকে, যদি না হয় তখন window.object এর সাথে এসোশিয়েট হয়। -> function এর মধ্যে this দিলে হয় এইটা myfunc();
+ * new myfunc(); দিলে empty Object output দেখাবে
+ * this -> কোনো Object এর মধ্যে ব্যবহার করলে সে অব্জেক্ট রেফার করবে
+ */
+
+/* function myfunc() {
+  console.log(this);
+}
+
+// myfunc();
+new myfunc(); */
+
+let react = {
+  width: 100,
+  Height: 50,
+  draw: function () {
+    console.log(`I am a reactangle`);
+    this.printProperties();
+    console.log(this);
+  },
+  printProperties: function () {
+    console.log("This width is " + this.width);
+    console.log("This Height is " + this.Height);
+  },
+};
+
+react.draw();
+// react.printProperties();
+
+another = {
+  width: 1000,
+  Height: 500,
+  print: react.printProperties(),
+};
+
+another.print;
