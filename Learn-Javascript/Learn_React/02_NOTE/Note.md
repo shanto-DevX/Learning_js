@@ -365,3 +365,65 @@ function App() {
 
 export default App;
 ```
+
+---
+
+## Jsx Ternary Operator
+
+##### ✨ Inline if else
+
+```jsx
+function App() {
+  let marks = 80;
+  return (
+    <div>
+      {marks > 80 ? <h1>Brilliant Result</h1> : <h1>Avarage Result</h1>}
+    </div>
+  );
+}
+
+export default App;
+```
+
+##### ✨ jsx immediately-invoked
+
+- immediately-invoked function Create করার সাথে সাথে কল করা যায়।
+
+```jsx
+  <div>
+  {(
+    ()=>{
+      return `text`;
+    }
+  ),()}
+  </div>
+
+  -----------------
+import Condition from "./moreLearn/Condition";
+import IIFF from "./moreLearn/IIFF";
+
+function App() {
+  return (
+    <div>
+      <Condition />
+      <IIFF />
+    </div>
+  );
+}
+
+export default App;
+
+
+  const IIFF = () => {
+  let marks = 90;
+  return (
+    <div>
+      {(() => {
+        if (marks > 80 && marks < 100) {
+          return <h1>You get A+</h1>;
+        }
+      })()}
+    </div>
+  );
+};
+```
