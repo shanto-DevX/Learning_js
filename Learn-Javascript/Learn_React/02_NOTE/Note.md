@@ -427,3 +427,184 @@ export default App;
   );
 };
 ```
+
+---
+
+### Jsx Loop
+
+- Map Use হয়ে থাকে।
+
+```jsx
+const Loop = () => {
+  const city = ["Dhaka", "New York", "Dilhi"];
+  return (
+    <div>
+      <h1>Loop In Js</h1>
+      <ul>
+        {city.map((item, i) => {
+          return <li key={i.toString()}>{item}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default Loop;
+```
+
+![Why Use Map](image-5.png)
+
+- Return করার ক্ষমতা রাখে।
+- [MORE LOOPS](https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx)
+
+---
+
+### Jsx Conditional Rendering
+
+- Case: ইউজার যখন Login Button এ ক্লিক করবে তখন তাকে logout বাটন সো করাতে হবে এইটা হচ্ছে Conditional Rendering
+- if... else
+- Switch
+- Ternary Operator
+- Logical &&
+- IIFF
+
+##### ✨ If ... Else Condition
+
+```jsx
+const logInStatus = (status) => {
+  if (status) {
+    return <button>Logout Button</button>;
+  } else {
+    return <button>Login Button</button>;
+  }
+};
+
+const Conditional_randaring = () => {
+  return (
+    <div>
+      <h1>Login Status</h1>
+      {logInStatus(false)}
+    </div>
+  );
+};
+
+export default Conditional_randaring;
+```
+
+##### ✨ Switch Case Statement
+
+```jsx
+const Conditional_randaring = () => {
+  const status = false;
+
+  switch (status) {
+    case true:
+      return (
+        <>
+          <h1>Login Status</h1>
+          <button>Logout</button>
+        </>
+      );
+    case false:
+      return (
+        <>
+          <h1>Login Status</h1>
+          <button>Login</button>
+        </>
+      );
+    default:
+      return null;
+  }
+};
+
+export default Conditional_randaring;
+```
+
+##### ✨ Ternary Operation
+
+```jsx
+const Conditional_randaring = () => {
+  let status = false;
+
+  return (
+    <div>
+      <h1>Login Status</h1>
+      {status ? <button>Logout</button> : <button>Login</button>}
+    </div>
+  );
+};
+
+export default Conditional_randaring;
+```
+
+##### ✨ && || Operation
+
+```jsx
+const Conditional_randaring = () => {
+  let status = false;
+
+  return (
+    <div>
+      <h1>Login Status</h1>
+      {(status && <button>Logout</button>) || <button>Login</button>}
+    </div>
+  );
+};
+
+export default Conditional_randaring;
+```
+
+## Props -> Properties
+
+![Props](image-6.png)
+
+- এইখানে পেরেন্ট এর চাইল্ড এর ফ্লো ধরে কাজ করেতে হবে।
+- যেমনঃ app.jsx হচ্ছে পেরেন Hero.jsx হচ্ছে app.jsx চাইল্ড এবং HeroImg.jsx যদি Hero.jsx এ ইম্পোর্ট করা হয় তাহলে সেইটা হচ্ছে Hero.jsx এর চাইল্ড এভাবে Uni-direction flow তে চলে।
+- Props data is Read Only / Emutable -> এর মানে, পেরেন্ট Component এর ডাটা চাইল্ড ডাটা দিয়ে পরিবর্তন হবে না।- পেরেন্ট এর ডাটা চাইল্ড চেঞ্জ করতে পারবেনা,পেরেন্ট Component যেভাবে ডাটা পাঠাবে সেইভাবে চাইল্ড কে ডাটা রিসিভ করতে হবে।
+
+```jsx
+
+✨ app.jsx -- Parent ⬇️
+
+import Hero from "./Components/Hero";
+
+function App() {
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
+}
+
+export default App;
+
+✨  -- app.jsx -- Parent ➡️ Hero.jsx Child ⬇️
+
+import HeroImages from "./HeroImages";
+
+const Hero = () => {
+  return (
+    <div>
+      <h1>Hello Hero Section</h1>
+      <HeroImages />
+    </div>
+  );
+};
+
+export default Hero;
+
+
+✨ Hero.jsx Parent ➡️ HeroImages.jsx Child
+
+const HeroImages = () => {
+  return (
+    <div>
+      <img style={{ width: "50%" }} src="src/assets/img/image.png" alt="img" />
+    </div>
+  );
+};
+
+export default HeroImages;
+
+
+```
