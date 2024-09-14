@@ -554,7 +554,7 @@ const Conditional_randaring = () => {
 export default Conditional_randaring;
 ```
 
-## Props -> Properties
+## 👉 Props -> Properties
 
 ![Props](image-6.png)
 
@@ -607,4 +607,386 @@ const HeroImages = () => {
 export default HeroImages;
 
 
+```
+
+### ✨ Props String pass
+
+```jsx
+📁 App.jsx
+import Hero from "./Components/Hero";
+
+function App() {
+  return (
+    <div>
+      {/* Learning Props */}
+      <Hero title="This is React" Des="Learning React jsx Props" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+```jsx
+
+📁 Hero.jsx
+const Hero = (props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <h1>{props.Des}</h1>
+    </div>
+  );
+};
+
+export default Hero;
+```
+
+- এখানে 📁 App.jsx হচ্ছে Parent এবং 📁 Hero.jsx হচ্ছে এর চাইল্ড।
+- এখানে App.jsx থেকে স্ট্রিং ডাটা Hero.jsx পাঠানো হচ্ছে। এইডাটা সুধু পেরেন্ট ক্মপোনেন্ট পরিবর্তন করতে পারবে, চাইল্ড কোন পরিবরন করতে পারবেনা।
+
+### ✨ Props Object pass
+
+```jsx
+📁 App.jsx
+import Hero from "./Components/Hero";
+
+function App() {
+
+  const itemObj = {
+    name: "Saiful Islam Shanto",
+    learning: "React JSx",
+    city: "Narayanganj",
+  };
+
+  return (
+    <div>
+      <Hero item={itemObj} />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+```jsx
+
+📁 Hero.jsx
+const Hero = (props) => {
+  return (
+    <div>
+      <h3>Name : {props.item["name"]}</h3>
+      <h3>Learning : {props.item["learning"]}</h3>
+      <h3>City : {props.item["city"]}</h3>
+    </div>
+  );
+};
+
+export default Hero;
+
+```
+
+### ✨ Props Function Pass
+
+```jsx
+📁 App.jsx - Component Load এর সাথে সাথে এক্সিকিউট হয়ে যাবে
+import Hero from "./Components/Hero";
+
+function App() {
+  return (
+    <div>
+   <button onClick={alert("Hello World")}>Click</button>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+```jsx
+📁 App.jsx - arrow function inside the randaring
+import Hero from "./Components/Hero";
+
+function App() {
+  return (
+    <div>
+   <button
+        onClick={() => {
+          alert("Hello World Inside With Arrow Function");
+        }}
+      >
+        Click - Inside Button - AF
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+```jsx
+📁 App.jsx - Regular function inside the randaring
+import Hero from "./Components/Hero";
+
+function App() {
+  return (
+    <div>
+   <button
+        onClick={function demo() {
+          alert("Hello World Inside With Regular Function");
+        }}
+      >
+        Click - Inside Button - RF
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+```jsx
+📁 App.jsx - Regular function Outside the randaring
+import Hero from "./Components/Hero";
+
+  function showAlert() {
+    alert(" HEllo World Reguler function");
+  }
+
+
+function App() {
+  return (
+    <div>
+   <button onClick={showAlert}>Click</button> <br />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+```jsx
+📁 App.jsx - Arrow function Outside the randaring
+
+import Hero from "./Components/Hero";
+  const showAlert2 = () => {
+    alert(" HEllo World with arrow function");
+  };
+
+function App() {
+  return (
+    <div>
+   <button onClick={showAlert2}>Click</button> <br />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Form Submit in jsx
+
+- একটা ফ্রোম সাবমিট এর সময় রিলোড নেয়, কিন্তু এইটা বন্ধ করতে চাইলে form এর form এ ফাংশন পাস করতে হবে।
+- preventDefault -> ডেফল্ট ইভেন্টকে বন্ধ করে দেয়।
+
+```jsx
+📁 App.jsx
+
+import Hero from "./Components/Hero";
+  const postFromData = (event) => {
+    event.preventDefault();
+    alert("Form Submitted");
+  };
+
+function App() {
+  return (
+      <div>
+        <form action="#" onSubmit={postFromData}>
+          <input type="text" placeholder="Name" />
+          <button type="submit">submit</button>
+        </form>
+      </div>
+  );
+}
+```
+
+## ✨ React Hook
+
+## ![alt text](image-7.png)
+
+- React Hook হচ্ছে, React লাইব্রেরি এর মধ্যে React hook একটি বিল্টিন ফিচার
+- React hook এর মধ্যে অনেক গুলো মেথড আছে
+
+### useRef()
+
+- Render ছাড়া কোন ভ্যেলু চেঞ্জ করা যায়
+- DOM এলিমেন্ট এ এক্সেস করা যায়।
+
+#### How to use useRef()
+
+- useRef ব্যবহার এর জন্য প্রথমে
+  - `import { useRef } from "react";` করতে হবে
+- id এর বদলে, ref ব্যবহার করতে হবে
+  - `<h1 ref={headingIs}></h1>` inside Return
+
+#### change InnerHtml & InnerText
+
+##### ✨ Wit Current Statemnt
+
+```jsx
+📂 main file is UseRef.jsx & import this in app.jsx
+
+import { useRef } from "react";
+const UseRef = () => {
+  let headingIs = useRef();
+  const change = () => {
+    headingIs.current.innerHTML = "<ul><li>A</li><li>B</li></ul>";
+  };
+  return (
+    <div>
+      <h2>Learn Useref</h2>
+      <h1 ref={headingIs}></h1>
+      <button onClick={change}> click </button>
+    </div>
+  );
+};
+
+export default UseRef;
+```
+
+##### ✨ Without Current Statemnt
+
+```jsx
+
+📂 main file is UseRef.jsx & import this in app.jsx
+
+import { useRef } from "react";
+const UseRef = () => {
+  let headingIs = useRef();
+  const change = () => {
+    // * Without Current Statemnt
+    headingIs.innerText = "Hello useRef without Current Statement";
+  };
+  return (
+    <div>
+      <h2>Learn Useref</h2>
+      <h1 ref={(h1) => (headingIs = h1)}></h1>
+      <button onClick={change}> click </button>
+    </div>
+  );
+};
+
+export default UseRef;
+```
+
+#### Use Attribute
+
+```jsx
+
+📂 main file is UseRef.jsx & import this in app.jsx
+
+import { useRef } from "react";
+const UseRef = () => {
+  {
+    /* ✨ Change Attribute Value  */
+  }
+  let myImg = useRef();
+  const showImg = () => {
+    myImg.current.src = "https://placehold.co/600x400?text=Hello+World";
+    myImg.current.setAttribute("height", "200px");
+    myImg.current.setAttribute("width", "300px");
+  };
+
+  return (
+    <div>
+      <h2>Learn Useref</h2>
+
+      {/* ✨ Change Attribute Value  */}
+
+      <img ref={myImg} src="https://placehold.co/600x400" alt="img" />
+      <button onClick={showImg}>Click</button>
+    </div>
+  );
+};
+
+export default UseRef;
+```
+
+#### Use In Input
+
+```jsx
+import { useRef } from "react";
+const UseRef = () => {
+  // For Multipale Refferance
+  let firstName,
+    lastName,
+    Age = useRef();
+
+  const showName = () => {
+    let FName = firstName.value;
+    let lName = lastName.value;
+    let age = Age.value;
+
+    alert(`First Name : ${FName} \nLast Name : ${lName} \nAge : ${age}`);
+  };
+
+  return (
+    <div>
+      <h2>Learn Useref</h2>
+      {/* ✨ Input  */}
+
+      <input
+        ref={(a) => (firstName = a)}
+        type="text"
+        placeholder="First Name"
+      />
+      <br />
+      <input ref={(b) => (lastName = b)} type="text" placeholder="Last Name" />
+      <br />
+      <input ref={(ageIs) => (Age = ageIs)} type="text" placeholder="Age" />
+      <br />
+      <button onClick={showName}>Show Name</button>
+    </div>
+  );
+};
+
+export default UseRef;
+```
+
+```jsx
+import { useRef } from "react";
+const UseRef = () => {
+  {
+    /* ✨ Input  */
+  }
+  let firstName = useRef();
+  let lastName = useRef();
+
+  const showName = () => {
+    let FName = firstName.current.value;
+    let lName = lastName.current.value;
+
+    alert(`${FName} ${lName}`);
+  };
+
+  return (
+    <div>
+      <h2>Learn Useref</h2>
+
+      {/* ✨ Input  */}
+
+      <input ref={firstName} type="text" placeholder="First Name" />
+      <br />
+      <input ref={lastName} type="text" placeholder="Last Name" />
+      <br />
+    </div>
+  );
+};
+
+export default UseRef;
 ```
