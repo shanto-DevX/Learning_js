@@ -990,3 +990,85 @@ const UseRef = () => {
 
 export default UseRef;
 ```
+
+#### Add & Remove - Css Class
+
+##### ✨ Install Bootstrap In React Projects
+
+- npm i bootstrap@5.3.3
+- `import "bootstrap";`
+- `import "bootstrap/dist/css/bootstrap.min.css";`
+- 🚀 Lets GOOOOOOOOOOOOO
+
+```jsx
+import { useRef } from "react";
+const UseRef = () => {
+  let myGeadLine = useRef();
+  {
+    /*Change Singel Class*/
+  }
+  const change = () => {
+    myGeadLine.current.classList.remove("text-success");
+    myGeadLine.current.classList.add("text-primary");
+  };
+
+  {
+    /*Change Multiple Class*/
+  }
+  let myHeading = useRef();
+  const changeBTN = () => {
+    myHeading.current.classList.remove("text-white", "bg-dark", "text-center");
+    myHeading.current.classList.add("text-danger", "bg-primary", "text-left");
+  };
+
+  return (
+    <div>
+      <h2>Learn Useref</h2>
+
+      {/* ✨ Css Class  */}
+      <div>
+        {/*Change Singel Class*/}
+        <h1 className="text-success" ref={myGeadLine}>
+          This is Head Line
+        </h1>
+        <button onClick={change}>Change Color</button>
+
+        {/*Change Multiple Class*/}
+        <h1
+          className="text-white p-2 fs-5 text-center mx-4 bg-dark"
+          ref={myHeading}
+        >
+          Hello World, Css Class add
+        </h1>
+        <button onClick={changeBTN}>change</button>
+      </div>
+    </div>
+  );
+};
+
+export default UseRef;
+```
+
+#### Persisted Mutable Values
+
+- Component এর ভিতরে কোন ভ্যেলু চেঞ্জ করলে Component ফাইল রিরেন্ডার হবেনা। রিরেন্ডার ছাড়া এক্টা ভ্যেলুকে চেঞ্জ করা হয় useRef() দিয়ে।
+
+```jsx
+import { useRef } from "react";
+const UseRef = () => {
+  let number = useRef(0);
+  const change = () => {
+    number.current++;
+    console.log(number.current);
+  };
+
+  return (
+    <div>
+      <h2>Learn Useref</h2>
+      <button onClick={change}>Increment</button>
+    </div>
+  );
+};
+
+export default UseRef;
+```
