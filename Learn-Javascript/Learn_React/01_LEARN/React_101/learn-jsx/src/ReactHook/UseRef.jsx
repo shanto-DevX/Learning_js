@@ -82,6 +82,9 @@ const UseRef = () => {
 
     alert(`First Name : ${FName} \nLast Name : ${lName} \nAge : ${age}`);
   }; */
+  {
+    /* ✨ END */
+  }
 
   {
     /* ✨ Add & Remove Class  */
@@ -101,11 +104,49 @@ const UseRef = () => {
     myHeading.current.classList.add("text-danger", "bg-primary", "text-left");
   }; */
 
+  {
+    /* ✨ END */
+  }
+
+  {
+    /* ✨ Persisted Mutable */
+  }
+
+  /*  
+  
   let number = useRef(0);
   const change = () => {
     number.current++;
     console.log(number.current);
+  }; */
+
+  {
+    /* ✨ END */
+  }
+
+  /*   let apiData = useRef(null); -> For Store Caching Data
+  let ShowDataIs = useRef(); 
+
+  const fetchData = async () => {
+    const response = await fetch("https://dummyjson.com/products"); -> Get Data From API
+    apiData.current = await response.json(); -> Resive JSON Data
   };
+  const ShowData = () => {
+    ShowDataIs.current.innerText = JSON.stringify(apiData.current); -> SHOW JSON Data As String Formate in ShowDataIs[Inside p]
+  }; */
+
+  const storeAPI = useRef(null);
+  const showData = useRef();
+
+  const callAPI = async () => {
+    // const response = await fetch("https://dummyjson.com/products");
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    storeAPI.current = await response.json();
+  };
+  const showAPIdata = () => {
+    showData.current.innerText = JSON.stringify(storeAPI.current);
+  };
+
   return (
     <>
       <h2>Learn Useref</h2>
@@ -167,8 +208,17 @@ const UseRef = () => {
         <button onClick={changeBTN}>change</button> */}
       </div>
       {/* ✨ Persisted Mutable  */}
+      <div>{/* <button onClick={change}>Increment</button> */}</div>
+
+      {/* ✨ Persisted Mutable  */}
       <div>
-        <button onClick={change}>Increment</button>
+        {/* <p ref={ShowDataIs}></p> */}
+        {/* <button onClick={fetchData}>Call API</button> */}
+        {/* <button onClick={ShowData}>Show Data</button> */}
+
+        <p ref={showData}></p>
+        <button onClick={callAPI}>API CALLING</button>
+        <button onClick={showAPIdata}>Show API Data</button>
       </div>
     </>
   );

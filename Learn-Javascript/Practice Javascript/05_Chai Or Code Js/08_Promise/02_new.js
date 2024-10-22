@@ -31,13 +31,13 @@
             * console.log("Four"); 👉 4
         
 
-            * console.log("one");
-            * console.log("Two");
+            * console.log("one"); 👉 1
+            * console.log("Two"); 👉 2
             * setTimeout(function () {
-            *     console.log("Three");
+            *     console.log("Three"); 👉 4
             *     }, 2000);
                 
-            * console.log("Four");
+            * console.log("Four"); 👉 3
 
 👉 -> CallBack
 

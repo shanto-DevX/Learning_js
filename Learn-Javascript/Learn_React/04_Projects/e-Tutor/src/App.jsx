@@ -1,10 +1,10 @@
-import { useState } from "react";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
-    <>
-      <div>Hello World</div>
-    </>
+    <main className="overflow-x-hidden">
+      <Navbar />
+    </main>
   );
 }
 

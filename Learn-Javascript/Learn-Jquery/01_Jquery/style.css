@@ -1,0 +1,11 @@
+.style1 {
+  color: rgb(255, 255, 255);
+  font-size: 36px;
+  background: red;
+}
+
+.style2 {
+  color: rgb(255, 255, 255);
+  font-size: 46px;
+  font-style: italic;
+}

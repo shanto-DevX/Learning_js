@@ -5,7 +5,7 @@
 - একসাথে একাধিক কাজ করতে পারেনা, একসাথে একটি অপারেশন রান করতে পারে তাই একে সিঙ্গেল থ্রেডেড ল্যাংগুয়েজ বলে।
   - যেমনঃ একটা রেস্টুডেন্ট এর মধ্যে ২ জন কাস্টোমার আছে, ত প্রথমে একজন [user1] এর ওর্ডার নিবে এবং সেইটা কমপ্লিট করে অন্য জনের [user2] থেকে ওর্ডার নিবে-- এখানে ওয়েটার হচ্ছে [Thread]
   - synchronous Blocking Behavior
-  - js Code -> masing Language Convert -> browser
+  - js Code -> meshing Language Convert -> browser
   - Browser
     - Runtime Envarionment
     - Engine

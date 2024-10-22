@@ -1,4 +1,4 @@
-# Learning React
+## Learning React
 
 ---
 
@@ -10,18 +10,61 @@
 
 [React Official Doc](https://react.dev/)
 [Vite](https://vitejs.dev/guide/)
+[React 19](https://19.react.dev/)
+[React](https://react.dev/)
 
 ---
 
 ## 📝 NOTE START
 
+![Tree Stracture](image-19.png)
+![Real Dom Vs Vartual DOM](image-20.png)
+
+- Real Dom থেকে Vartual DOM এ একটা কপি নিয়ে রাখে এবং এর পরে পরিবর্তন প্রয়োজন হলে সেইটা সুধু `Real Dom এবং Vartual DOM` এ ক্মপেয়ার করে সেইটায় চেঞ্জ করে থাকে। সেইটাই পরিবর্তন করবে অন্যথায় Real Dom পুরোটা আবার রেন্ডার বা রিলোড নিতো।
+
+---
+
 ✨ Learn First From Document
 👉 For Web Devlopment :- React DOM
 👉 For App Devlopment :- React Native
+👉 npx :- node package exicuter
 
 - What is Recat js
   - js libraray & build Front end, building UI
-  - React component based Architecture :- একটা ওয়েব পেজে তেরির জন্য ছোট ছোট অনেক কম্পোনেন্ট থাকে, এবং সেই কম্পোনেন্ট গুলো একত্রে এইটি ওয়েব সাইট বানানো হয়।
+  - React component based Architecture :- একটা ওয়েব পেজে তেরির জন্য ছোট ছোট অনেক কম্পোনেন্ট থাকে, এবং সেই কম্পোনেন্ট গুলো একত্রে একটি ওয়েব সাইট বানানো হয়।
+  - Use for Complex Front end
+
+---
+
+## 📝 React Learning Process
+
+- Indepth
+  - bable, fibre, virtual dom . diff algorithm, hydration, tree shaking
+- by making Projects
+  - todo, calculator, github api
+
+#### ✨ React Topic
+
+- Core react [State or UI manipulation, JSX]
+- Component Reusability
+- Props
+- How to propagate Changes [Hooks -> useState, useEffects]
+
+- SPA => single page Application
+
+##### ✨ Learn MORE
+
+- -> Router [React Router DOM]
+- -> State Management [Redax , Redux ToolKit, Zustand, Context API]
+- -> ❌ Class Based Component
+- -> BAAS APPS [Backend App as service]
+  - -> Social Media Clone, Ecpmmerce APP
+    - -> appwrite / firebase / superbase
+
+##### ✨ After React
+
+- ✨ Backend - Framwork
+  - ✨ Next Js / Gatsby / Remix
 
 ---
 
@@ -108,12 +151,14 @@ createRoot(document.getElementById("root")).render(
 
 ## 📂 Project Structure
 
-✨ Distribution -> Dist
-✨ Node Modules
-✨ public
-✨ Source
-✨ Package.json
-✨ vite Config
+- ✨ Distribution -> Dist
+- ✨ Node Modules
+- ✨ public
+- ✨ Source
+- ✨ Package.json
+- ✨ vite Config
+
+---
 
 > ### ✨ vite Config
 >
@@ -124,7 +169,7 @@ createRoot(document.getElementById("root")).render(
 
 > ### ✨ Package.json
 >
-> - এই ফাইলটা হচ্ছে কি কি পেকেজ ইন্সটল আছে, প্রোজেক্ট এর ডিটেইলস এইগুলো এই ফাইলে থাকে
+> - এই ফাইলটা হচ্ছে কি কি Package ইন্সটল আছে, প্রোজেক্ট এর ডিটেইলস এইগুলো এই ফাইলে থাকে
 > - dependencies এর মধ্যে যা আছে এইগুলো প্রডাক্টশন এ যাবে
 > - devdependencies এর মধ্যে যা আছে এইগুলো final প্রডাক্টশন এ যাবে না এইগুলো ডেভ্লপমেন্ট এ কাজ করে সুধু।
 > - npm i packageName দিয়ে যেই মডিউল গুলো ডাউনলোড করা হয় সেইটা এইখানে থাকে।
@@ -158,7 +203,7 @@ createRoot(document.getElementById("root")).render(
 > ### ✨ node Module
 >
 > - এর মধ্যে সব Module থাকবে
-> - npm i দিলে Package.json এ থাকে মডিউল/ ডিপেন্ডেঞ্ছি গুলো এইখানে চলে আসবে।
+> - npm i দিলে Package.json এ থাকে মডিউল/ Dependency গুলো এইখানে চলে আসবে।
 
 <br>
 
@@ -172,7 +217,12 @@ createRoot(document.getElementById("root")).render(
 
 ---
 
-## Functional COmponents
+## ✨ Components
+
+- বার বার ব্যবহার করা যায়
+- Component তেরির সময় প্রথম অক্ষর বড় হারে হবে।
+
+## Functional Components
 
 ## ![alt text](image-2.png)
 
@@ -186,9 +236,9 @@ const App = () => {
 export default App;
 ```
 
-- vs code -> rsc to create this
-- App এর করান আমরা app.jsx ফাইলে কাজ করছি
-- return এর মধ্যে যা আছে এইগুলোকে বলে রেন্ডারিং
+- vs code -> `rsc` to create this
+- App এর করান আমরা app.jsx ফাইলে কাজ করছি`- যে ফাইলে কাজ করছি সেইফাইলের নাম দিয়ে ফাংশন বানাতে হবে।
+- **return এর মধ্যে যা আছে এইগুলোকে বলে রেন্ডারিং**
 - Server Side Rendaring - server computer / server | CSI
 - Client Side Rendaring - Browser Rendaring
 
@@ -255,9 +305,9 @@ const App = () => {
 
 ![alt text](image-4.png)
 
-##### ✨ Return Signle Parent element in jsx
+##### ✨ Return Single Parent element in jsx
 
-- প্রথমে অপেনিং এন্ড ক্লোজিং টেগ থাকবে যেমনঃ
+- প্রথমে Opening এন্ড Closing টেগ থাকবে যেমনঃ
 
   - `<div></div>`
   - `<>  </>`
@@ -288,7 +338,7 @@ function App() {
 export default App;
 ```
 
-##### ✨ Implement Javascript Directly in jsx
+##### ✨ Emplement Javascript Directly in jsx
 
 - jsx এর মধ্যে javascript লেখা যায়
 - `<h1>{2+2}</h1>`
@@ -559,7 +609,7 @@ export default Conditional_randaring;
 ![Props](image-6.png)
 
 - এইখানে পেরেন্ট এর চাইল্ড এর ফ্লো ধরে কাজ করেতে হবে।
-- যেমনঃ app.jsx হচ্ছে পেরেন Hero.jsx হচ্ছে app.jsx চাইল্ড এবং HeroImg.jsx যদি Hero.jsx এ ইম্পোর্ট করা হয় তাহলে সেইটা হচ্ছে Hero.jsx এর চাইল্ড এভাবে Uni-direction flow তে চলে।
+- যেমনঃ app.jsx হচ্ছে Parent, Hero.jsx হচ্ছে app.jsx চাইল্ড, এবং HeroImg.jsx যদি Hero.jsx এ ইম্পোর্ট করা হয় তাহলে সেইটা হচ্ছে Hero.jsx এর চাইল্ড এভাবে Uni-direction flow তে চলে।
 - Props data is Read Only / Emutable -> এর মানে, পেরেন্ট Component এর ডাটা চাইল্ড ডাটা দিয়ে পরিবর্তন হবে না।- পেরেন্ট এর ডাটা চাইল্ড চেঞ্জ করতে পারবেনা,পেরেন্ট Component যেভাবে ডাটা পাঠাবে সেইভাবে চাইল্ড কে ডাটা রিসিভ করতে হবে।
 
 ```jsx
@@ -789,10 +839,10 @@ function App() {
 export default App;
 ```
 
-## Form Submit in jsx
+## Form Submit in jsx ✨
 
 - একটা ফ্রোম সাবমিট এর সময় রিলোড নেয়, কিন্তু এইটা বন্ধ করতে চাইলে form এর form এ ফাংশন পাস করতে হবে।
-- preventDefault -> ডেফল্ট ইভেন্টকে বন্ধ করে দেয়।
+- preventDefault -> ডিফল্ট বিহেবিয়ার ইভেন্টকে বন্ধ করে দেয়।
 
 ```jsx
 📁 App.jsx
@@ -819,10 +869,11 @@ function App() {
 
 ## ![alt text](image-7.png)
 
-- React Hook হচ্ছে, React লাইব্রেরি এর মধ্যে React hook একটি বিল্টিন ফিচার
+- React Hook হচ্ছে, React লাইব্রেরি এর মধ্যে React hook একটি BuildIn ফিচার
 - React hook এর মধ্যে অনেক গুলো মেথড আছে
+- Special Type Of Functions
 
-### useRef()
+### 1️⃣ useRef()
 
 - Render ছাড়া কোন ভ্যেলু চেঞ্জ করা যায়
 - DOM এলিমেন্ট এ এক্সেস করা যায়।
@@ -836,7 +887,7 @@ function App() {
 
 #### change InnerHtml & InnerText
 
-##### ✨ Wit Current Statemnt
+##### ✨ With Current Statemnt
 
 ```jsx
 📂 main file is UseRef.jsx & import this in app.jsx
@@ -1051,7 +1102,7 @@ export default UseRef;
 
 #### Persisted Mutable Values
 
-- Component এর ভিতরে কোন ভ্যেলু চেঞ্জ করলে Component ফাইল রিরেন্ডার হবেনা। রিরেন্ডার ছাড়া এক্টা ভ্যেলুকে চেঞ্জ করা হয় useRef() দিয়ে।
+- Component এর ভিতরে কোন ভ্যেলু চেঞ্জ করলে Component ফাইল রিরেন্ডার হবেনা। রিরেন্ডার ছাড়া একটা ভ্যেলুকে চেঞ্জ করা হয় useRef() দিয়ে।
 
 ```jsx
 import { useRef } from "react";
@@ -1071,4 +1122,544 @@ const UseRef = () => {
 };
 
 export default UseRef;
+```
+
+#### UseRef Caching Expensive Computation
+
+![UseRed Caching Expensive Computation](image-8.png)
+
+- API Calling :-
+
+```jsx
+import { useRef } from "react";
+const UseRef = () => {
+  const storeAPI = useRef(null);
+  // - এখানে storeAPI এর মধ্যে API কল হয়ে সেইটা জমা হয়ে থাকবে এবং পরে কল করলে আর সাইটে গিয়ে কল হবে না জমা ডাটা থেকে ডাটা প্রদান করবে
+  const showData = useRef();
+  // - showData এর মধ্যে ডাটা দেখাবে
+
+  const callAPI = async () => {
+    // const response = await fetch("https://dummyjson.com/products");
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    // - API কল করা হইছে।
+    storeAPI.current = await response.json();
+    // - API এর ডাটা storeAPI তে জমা করা হইছে।
+  };
+  const showAPIdata = () => {
+    showData.current.innerText = JSON.stringify(storeAPI.current);
+    - showData এর মধ্যে API এর ডাটা storeAPI থেকে JSON.stringify এ কনভার্ট করে রাখা হইছে বাটনে।
+  };
+
+  return (
+    <div>
+
+      // --> API ডাটা দেখাবে ডিসপ্লেতে।
+      <p ref={showData}></p>
+      // --> API Call করবে
+      <button onClick={callAPI}>API CALLING</button>
+      // --> API এর কল করা ডাটা p এর মধ্যেমে দেখাবে
+      <button onClick={showAPIdata}>Show API Data</button>
+    </div>
+  );
+};
+
+export default UseRef;
+```
+
+## 2️⃣ useState()
+
+![alt text](image-9.png)
+![alt text](image-10.png)
+
+- 📦State Memeory 🔁 UI VIEW 🪟
+- UI এর ডাটা গুলো 📦State এ জমা থাকে এখন যদি `UI` এর ডাটা পরিবর্তন করা হয় থালে সেইগুলো 📦`State` এ জমা থাকবে এবং যদি `📦State` এর ডাটে চেঞ্জ হয় তাহলে সেইগুলো `UI VIEW` তে চেঞ্জ হয়ে যাবে।
+
+- State এর মধ্যে যদি কোন ডাটা বা ভ্যেলু চেঞ্জ করা হয় তাহলে সেইটা UI তে আটোমেটিকেলি চেঞ্জ হবে কোন লোড বা রেন্ডার না করে।
+
+- State এর মধ্যে যে ডেটা থাকে সেইগুলো থাকে জাভাস্ক্রিপ্ট অব্জেক্ট আকারে থাকে
+
+```jsx
+import { useState } from "react";
+
+const UseStateIs = () => {
+  let [numberIs, setNumber] = useState(0);
+
+  const change = () => {
+    setNumber(numberIs + 1);
+  };
+
+  return (
+    <>
+      <h1>Learnning UseState()</h1>
+      <div>
+        <h1>Nubmer : {numberIs} </h1>
+        <button onClick={change}>Click</button>
+      </div>
+    </>
+  );
+};
+
+export default UseStateIs;
+```
+
+```jsx
+import { useState } from "react";
+
+const UseStateIs = () => {
+  {
+    /* ✨ Usestate() */
+  }
+  let [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>Learnning UseState()</h1>
+      <div>
+        <h1>Number : {number}</h1>
+        <button onClick={() => setNumber(number + 1)}>click</button>
+      </div>
+    </>
+  );
+};
+
+export default UseStateIs;
+```
+
+#### ✨ WOrk with object in useState()
+
+```jsx
+// 🗨️ Set & Update Indiviaual Object
+
+import { useState } from "react";
+
+const UseStateIs = () => {
+  // {/* ✨ Usestate() */}
+  // {/* ✨ Usestate pass object */}
+  const [myObj, setMyObj] = useState({
+    key1: "value 1",
+    key2: "value 2",
+    key3: "value 3",
+  });
+
+  // => Set Multiple Object Value
+  const change = () => {
+    setMyObj((pervOBJ) => ({
+      ...pervOBJ,
+      key1: " NEW VALUE OF KEY 1",
+      key2: " NEW VALUE OF KEY 2",
+      key3: " NEW VALUE OF KEY 3",
+    }));
+  };
+
+  return (
+    <>
+      <h1>Learnning UseState()</h1>
+      <div>
+        <h1>{myObj.key1}</h1>
+        <button onClick={change}>Change</button>
+      </div>
+    </>
+  );
+};
+
+export default UseStateIs;
+```
+
+```jsx
+// 🗨️ Set & Update All Object
+import { useState } from "react";
+
+const UseStateIs = () => {
+  // {/* ✨ Usestate() */}
+  // {/* ✨ Usestate pass object */}
+  const [myObj, setMyObj] = useState({
+    key1: "value 1",
+    key2: "value 2",
+    key3: "value 3",
+  });
+
+  // => Set Multiple Object Value
+  const change = () => {
+    setMyObj({
+      key1: "Update value 1",
+      key2: "Update value 2",
+      key3: "Update value 3",
+    });
+  };
+
+  return (
+    <>
+      <h1>Learnning UseState()</h1>
+      <div>
+        <h1>{myObj.key1}</h1>
+        <button onClick={change}>Change</button>
+      </div>
+    </>
+  );
+};
+
+export default UseStateIs;
+```
+
+#### ✨use useState for Two way Binding
+
+- two way binding হচ্ছে, form handaling এর কাজ এবং form get data via react এর কাজ একসাথে করবে।
+
+```jsx
+
+import React, { useState } from "react";
+
+const PracticeTwoWayBinding = () => {
+  💭 এইখানে ভেরিএবল তেরি করা হয়েছে
+  const [userName, SetUserName] = useState("");
+
+💭 এইখানে ফরম হেন্ডেলিং করা হয়েছে
+  const formHendaling = (e) => {
+    💭 এইখানে ফরম হেন্ডেলিং করা হয়েছে যাতে সাবমিট দিলে রিলোড না নেয়, সে জন্য ডিফ্লট বিহেভিয়র চেঞ্জ করা হয়েছে।
+    e.preventDefault();
+    💭 এইখানে userName প্রিন্ট করবে
+    console.log(userName);
+    💭 এইখানে userName প্রিন্ট করবে এবং SetUserName ইনপুরট খালি করে দিবে।
+    SetUserName("");
+  };
+  return (
+    <div>
+      <div>
+        <form className="m-5"
+          // 💭 এইখানে ফরম হেন্ডেলিং করা হয়েছে যাতে সাবমিট দিলে রিলোড না নেয়।
+          onSubmit={(e) => {
+            formHendaling(e);
+          }}>
+          <p>Two Way Binding From Hendaling</p>
+          <input
+           // 💭 এইখানে value তে userName দেওয়া হয়েছে যেই ডাটা দেখায়।
+            value={userName}
+            onChange={(e) => {
+              // 💭 এইখানে SetUserName এর মধ্যে ভ্যেলু যেইটা টাইপ করা হইছে সেইটা দেখাবে।
+              SetUserName(e.target.value);
+            }}
+            type="text"
+            placeholder="Name"
+            className="bg-slate-100 p-4  rounded border-2 border-solid border-indigo-500"
+          />
+          <br />
+          <button className="bg-slate-600 text-white rounded p-4 mt-2">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default PracticeTwoWayBinding;
+
+```
+
+---
+
+#### ✨why use Spread Operator
+
+![[34_Video]](image-11.png)
+
+## 3️⃣ useEffect()
+
+- useEffect() Method
+  ![alt text](image-13.png)
+
+- useEffect() Method হচ্ছে যখন আমাদের রিয়েক্ট ক্মপোনেন্ট প্রথম লোড হয় তখন আটোমেটিক useEffect মেথড এক্সিকিউট হয়।
+- main.jsx এ StrictMode Enable থাকলে Component দুইবার রেন্ডার রে এবং useEffect()এর ডাটা দুইবার দেখা যায়
+- main.jsx এ StrictMode Remove করলে useEffect() রেন্ডার একবার হবে।
+
+```jsx
+useEffect(() => {
+  console.log("হেলো রিয়েক্ট");
+}, [0, 1, 2, 3, 4]);
+```
+
+![alt text](image-12.png)
+
+- useEffect এর দুইটা আর্গুমেন্ট থাকে।
+  - 1. CallBack ফাংশন
+  - 2. dependency Array -> Optional
+
+#### ✨ Feach API
+
+```jsx
+import { useEffect, useState } from "react";
+
+const UseEffect = () => {
+  let [data, seTData] = useState();
+  useEffect(() => {
+    fetch("https://dummyjson.com/products/1")
+      .then((res) => res.json())
+      .then((json) => seTData(json));
+  }, []);
+
+  return (
+    <div>
+      <h1>Hello UseEffect</h1>
+      <p>{JSON.stringify(data.id)}</p>
+      <p>{JSON.stringify(data.title)}</p>
+      <p>{JSON.stringify(data.reviews)}</p>
+    </div>
+  );
+};
+
+export default UseEffect;
+```
+
+#### ✨ Feach API with async-Await
+
+```jsx
+import { useEffect, useState } from "react";
+
+const UseEffect = () => {
+  let [data, seTData] = useState();
+
+  useEffect(() => {
+    (async () => {
+      let resp = await fetch("https://dummyjson.com/products/1");
+      let json = await resp.json();
+      seTData(json);
+    })();
+  }, []);
+
+  return (
+    <div>
+      <h1>Hello UseEffect</h1>
+      <p>{JSON.stringify(data)}</p>
+    </div>
+  );
+};
+
+export default UseEffect;
+```
+
+## 4️⃣ React Router DOM
+
+![alt text](image-16.png)
+![alt text](image-14.png)
+
+- `npm i react-router-dom`
+- এক পেজ থেকে অন্য পেজে যেতে react-router-dom ব্যবহার হয়ে থাকে।
+
+![alt text](image-15.png)
+
+### ✨ BrowserRouter
+
+- `<browserRouter>` -- Parent
+- `<Routes>` -- child
+- `<Route>` -- innerchild
+
+- path="\*" => 404 Not Found
+
+```jsx
+
+📝 প্রথমে src তে একটা page নামে ফোল্ডার খুলে সেইটায় কয়েকটা ফাইল খুলবো এবং সেইগুলো app.jsx এ লিঙ্ক করবো।
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import NotFound from "./pages/NotFound";
+import ProductPage from "./pages/ProductPage";
+import ProfilePage from "./pages/ProfilePage";
+
+
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<HomePage />}></Route>
+    <Route path="/product" element={<ProductPage />}></Route>
+    <Route path="/profile" element={<ProfilePage />}></Route>
+    <Route path="*" element={<NotFound />}></Route>
+  </Routes>
+</BrowserRouter>
+```
+
+`
+
+## ✨ Link - NavLink
+
+- link & navlink দিয়ে পেজ লিংক করানো যায়।
+- app.jsx এর মধ্যে BrowserRouter দিয়ে প্রথমে লিঙ্ক করাতে হবে।
+- `import { Link } from "react-router-dom"`
+
+```jsx
+📂 componets -> Menu.jsx
+📂 Linke all pages <Menu/>
+
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Menu = () => {
+  return (
+    <div>
+      <h1>This is menu</h1>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/product">Product</Link>
+        </li>
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default Menu;
+```
+
+## ✨ NavLink
+
+- NavLink ব্যবহার করে Css কন্ডিশন দেওয়া যায়।
+- 📂 app.jsx এর মধ্যে BrowserRouter দিয়ে প্রথমে লিঙ্ক করাতে হবে।
+- 📂 src -> assets -> css => style.css এর মধ্যে স্টাইল লিখেতে হবে
+- main.jsx এর মধ্যে Import করতে হবে css
+- `import { NavLink } from "react-router-dom"` In NavLinkFile
+
+```jsx
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+const Menu = () => {
+  return (
+    <div>
+      <h1>This is menu</h1>
+      <ul>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-item" : "pending-item"
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-item" : "pending-item "
+            }
+            to="/product"
+          >
+            Product
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-item" : "pending-item "
+            }
+            to="/profile"
+          >
+            Profile
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default Menu;
+```
+
+### ✨ HashRouter
+
+![alt text](image-17.png)
+
+- HashRouter ব্যবহার করলে URL এর মধ্যে # আসবে।
+- Compatibility : .htaccess / web.config
+
+  - .htaccess file for react dom
+
+- history api :- Html5 HistoryAPI
+  - Navigation Method নিয়ে কাজ করে।
+  - BrouserRouter এইটা ব্যবহার করে
+  - HashRouter এইটা ব্যবহার করে না।
+
+## ✨ React Router DOM Passing Parameter
+
+![React Router DOM Passing Parameter](image-18.png)
+
+### 📝 Some Notes
+
+- npx create-react-app "FileName" দিয়ে প্রোজেক্ট বানালে React Script থাকে সেইটা HTML এর সাথে Javascript Link করে থাকে।
+
+- vite দিয়ে প্রোজেক্ট তেরি করে ফাইল করার সময় ফাইলের নাম আপারকেস দিতে হবে।
+
+## 🚀 LEARN MORE
+
+---
+
+### 🚀 Add CSS in React
+
+#### ✨ 1️⃣ `Add Style IN React`
+
+- প্রথমে assets / css / style.css ফাইল নিতে হবে
+- এবার এইটা main.jsx এ ইম্পোর্ট করে দিতে হবে
+- `import "./assets/css/style.css";`
+
+---
+
+#### ✨ 2️⃣ `Install Bootsrap IN React`
+
+- npm i bootstrap@5.3.3
+
+```jsx
+  🗃️app.jsx
+  import "bootstrap/dist/css/bootstrap.min.css";
+  import "bootstrap/dist/js/bootstrap.bundle.js";
+```
+
+---
+
+#### ✨ 2️⃣ `Install Tailwind IN React`
+
+- [Install Process Tailwind](https://tailwindcss.com/docs/guides/vite)
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init -p
+
+- add This Text in tailwind.config.js
+
+```css
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+```css
+  style.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+---
+
+#### ✨ Image Add in React
+
+```jsx
+import images from "../assets/img/img1.jpg";
+<img src={images} alt="" className="w-100" />;
+```
+
+```jsx
+const img1 = require('../assets/img/img1.jpg') -> Avobe Return
+<img src={img1} alt="" className="w-100" />;
+```
+
+```jsx
+-> Its work if Image is Public Foler
+<img src='../assets/img/img1.jpg' alt="" className="w-100" />;
 ```

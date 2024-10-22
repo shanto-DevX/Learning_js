@@ -6,8 +6,20 @@
 
 // import { useRef } from "react";
 
-import Hero from "./Components/Hero";
-import UseRef from "./ReactHook/UseRef";
+// import Hero from "./Components/Hero";
+// import UseRef from "./ReactHook/UseRef";
+// import UseRefTest from "./ReactHook/UseRefTest";
+import { HashRouter, BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import NotFound from "./pages/NotFound";
+import ProductPage from "./pages/ProductPage";
+import ProfilePage from "./pages/ProfilePage";
+import Menu from "./Components/Menu";
+import Form_useState from "./ReactHook/Form_useState";
+import TEST_Form_useState from "./ReactHook/TEST_Form_useState";
+import ToDoState from "./ReactHook/ToDoState";
+import UseEffect from "./ReactHook/UseEffect";
+import UseStateIs from "./ReactHook/UseStateIs";
 
 function App() {
   const itemObj = {
@@ -102,7 +114,44 @@ function App() {
       </div> */}
 
       {/* ✨ React HOOK */}
-      <UseRef />
+      {/* <UseRef /> */}
+      {/* <UseRefTest /> */}
+      {/* <UseStateIs /> */}
+      {/* <ToDoState /> */}
+      {/* <Form_useState /> */}
+      {/* <TEST_Form_useState /> */}
+      {/* <UseEffect /> */}
+
+      {/* ✨ React Router DOM */}
+      {/*       <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/product" element={<ProductPage />}></Route>
+          <Route path="/profile" element={<ProfilePage />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+      </BrowserRouter> */}
+
+      {/*       <HashRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/product" element={<ProductPage />}></Route>
+          <Route path="/profile" element={<ProfilePage />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+      </HashRouter> */}
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/product/:id/:name" element={<ProductPage />}></Route>
+          <Route
+            path="/profile/:facebbokID/:youtubeId"
+            element={<ProfilePage />}
+          ></Route>
+          <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
