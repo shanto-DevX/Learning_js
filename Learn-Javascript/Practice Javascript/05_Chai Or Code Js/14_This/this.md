@@ -14,3 +14,8 @@
 - this always refer Global Context
 - Browser Global Context Is `window`
 - nodeJs Global Context Is `{Object}`
+
+---
+
+- This সব সময় পেরেন্ট কে টার্গেট করে।
+-

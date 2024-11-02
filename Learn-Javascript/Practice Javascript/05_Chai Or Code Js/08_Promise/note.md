@@ -10,7 +10,7 @@
 > Promise এর মধ্যে ৩ ধরেনের State হয় <br>
 
     1.pending
-    2.fulfilled
+    2.fulfilled /-> Resolved
     3.Rejected
 
 ---

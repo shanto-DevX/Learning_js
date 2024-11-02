@@ -17,7 +17,7 @@ img {
 }
 
 .hero__heading {
-  color: chartreuse;
+  color: rosybrown;
   text-align: center;
   font-size: 36px;
 }
@@ -46,4 +46,28 @@ img {
 }
 .blog__item p {
   font-size: 16px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #dd6605;
+  border-radius: 50px;
+  padding: 0px 30px;
+}
+
+.menu .logo h1 {
+  color: #fff;
+}
+
+.menu .menus .menu-item {
+  text-decoration: none;
+  color: #e4e4e4;
+  font-size: 1.25rem;
+  padding: 0px 20px;
+}
+
+.menu .menus .menu-item:active {
+  color: red;
 }

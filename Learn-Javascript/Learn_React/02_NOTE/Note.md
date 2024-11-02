@@ -68,7 +68,7 @@
 
 ---
 
-#### React Install Process
+## ✨ React Install Process
 
 - File Path এর মধ্যে কোন & থাকলে ফাইল রান করবে না।
 
@@ -292,7 +292,7 @@ const App = () => {
 };
 ```
 
-## jsx
+## 📖 Learn jsx
 
 ![JSX](image-3.png)
 
@@ -300,6 +300,9 @@ const App = () => {
 - jsx => jsx javascript XML
 - HTML কোড এলাউ করে javascript কোডে
 - JSX ফাইলের মধ্যে HTML কোড এর মধ্যে javascript কোড লেখা যায় `<h1>{2+2}</h1>`
+- `import {jsx as _jsx} from "react/jsx-runtime.js"` এভাবে main.js দিয়ে কাজ করা যায়, কিন্তু কঠিন।
+- LEarn More Github Repo [JSX](https://github.com/facebook/react/tree/main/packages/react/src/jsx): react/packages/react/src
+  /jsx
 
 #### JSX Conventions
 
@@ -417,6 +420,45 @@ export default App;
 ```
 
 ---
+
+## Jsx
+
+##### ✨ Create Variable
+
+```jsx
+function App() {
+  const userName = "Shanto";
+
+  return <h1>Hello WOrld {userName}</h1>;
+}
+
+export default App;
+```
+
+- {} এইখানে Js Code লেখা যায়না।
+- এইখানে Evalated Expreation লেখা হয়।
+- এইখানে সুধু Completion / Outputs দেখায়
+
+##### ✨ Create Variable Behind The Seacn in main.jsx
+
+```jsx
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+
+const userNameVariable = " ! Shanto";
+const reactElement = React.createElement(
+  "a",
+  { href: "GOOGLE.com", target: "_blank" },
+  "HELLO WORLD From React Element",
+  userNameVariable
+);
+
+createRoot(document.getElementById("root")).render(reactElement);
+```
+
+- Behind the scen এ reactElement এর মধ্যে html এলিমেন্ট এর পরে ভেরিএবল ব্যবহার হয় আব্জেক্ট আকারে।
+- এইখানে অব্জেক্ট এর মধ্যে if else or loops ব্যবহার করা যায় না।
 
 ## Jsx Ternary Operator
 
@@ -604,13 +646,103 @@ const Conditional_randaring = () => {
 export default Conditional_randaring;
 ```
 
-## 👉 Props -> Properties
+## ✨ Props -> Properties
 
 ![Props](image-6.png)
 
+- Reuse Componets ->
+- এক Component এর ভ্যেলু অন্য Component এ পাঠাতে সাহাজ্য করে।
 - এইখানে পেরেন্ট এর চাইল্ড এর ফ্লো ধরে কাজ করেতে হবে।
 - যেমনঃ app.jsx হচ্ছে Parent, Hero.jsx হচ্ছে app.jsx চাইল্ড, এবং HeroImg.jsx যদি Hero.jsx এ ইম্পোর্ট করা হয় তাহলে সেইটা হচ্ছে Hero.jsx এর চাইল্ড এভাবে Uni-direction flow তে চলে।
 - Props data is Read Only / Emutable -> এর মানে, পেরেন্ট Component এর ডাটা চাইল্ড ডাটা দিয়ে পরিবর্তন হবে না।- পেরেন্ট এর ডাটা চাইল্ড চেঞ্জ করতে পারবেনা,পেরেন্ট Component যেভাবে ডাটা পাঠাবে সেইভাবে চাইল্ড কে ডাটা রিসিভ করতে হবে।
+
+#### কিভাবে কাজ করে তার ব্রকেথ্রু।
+
+- Props Handelending -> function Card(props)
+- Props Handelending -> function Card({objectKey,objectKey="diff Value"})
+
+#### Project Card
+
+```jsx
+✨ app.jsx
+
+import React from "react";
+import Card from "./components/Card";
+
+const App = () => {
+  let myObj = [
+    {
+      imgURL:
+        "https://images.pexels.com/photos/9069035/pexels-photo-9069035.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      name: "DevXShanto",
+      designation: "UiUX Designer",
+      pera: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti laborum ut est minus nostrum",
+      btnText: "Learn More",
+    },
+    {
+      imgURL:
+        "https://images.pexels.com/photos/10583179/pexels-photo-10583179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      name: "DevXShanto",
+      designation: "UiUX Designer",
+      pera: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti laborum ut est minus nostrum",
+      btnText: "Learn More",
+    },
+    {
+      imgURL:
+        "https://images.pexels.com/photos/28268121/pexels-photo-28268121/free-photo-of-an-old-black-and-white-photo-of-the-ruins.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      name: "DevXShanto",
+      designation: "UiUX Designer",
+      pera: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti laborum ut est minus nostrum",
+      btnText: "Learn More",
+    },
+  ];
+  return (
+    <div className="h-lvh">
+      <h1 className="bg-emerald-700 w-100 text-center block text-white font-bold p-4 rounded-full">
+        React Props With Tailwind
+      </h1>
+      <div className="flex ">
+        {myObj.map((item, index) => (
+          <Card data={item} key={index} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default App;
+```
+
+```jsx
+✨ Card.jsx
+import React from "react";
+
+const Card = ({ data }) => {
+  return (
+    <div className="">
+      <div className="card m-5 bg-gray-100 p-4 rounded text-gray-700">
+        <img
+          className="w-full h-auto max-w-md mx-auto sm:max-w-sm md:max-w-lg lg:max-w-xl object-cover"
+          src={data.imgURL}
+          alt=""
+        />
+        <div className="des my-3">
+          <h2 className="font-bold text-3xl capitalize">{data.name}</h2>
+          <p className="font-medium text-xl">{data.designation}</p>
+        </div>
+        <p>{data.pera}</p>
+        <button className="bg-emerald-800 px-4 py-3 rounded-xl mt-4 text-white">
+          {data.btnText}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
+```
+
+---
 
 ```jsx
 
@@ -869,9 +1001,11 @@ function App() {
 
 ## ![alt text](image-7.png)
 
-- React Hook হচ্ছে, React লাইব্রেরি এর মধ্যে React hook একটি BuildIn ফিচার
+- React Hook হচ্ছে, React লাইব্রেরি এর মধ্যে React hook একটি builtIn ফিচার
 - React hook এর মধ্যে অনেক গুলো মেথড আছে
 - Special Type Of Functions
+- UI Update করে থাকে React
+- https://github.com/facebook/react/blob/main/packages/react/src/ReactHooks.js
 
 ### 1️⃣ useRef()
 
@@ -1441,14 +1575,23 @@ export default UseEffect;
 ![alt text](image-16.png)
 ![alt text](image-14.png)
 
+- [reactrouter](https://reactrouter.com/)
 - `npm i react-router-dom`
 - এক পেজ থেকে অন্য পেজে যেতে react-router-dom ব্যবহার হয়ে থাকে।
+- ব্যবহার এর নিয়ম
+
+  - `main.jsx` এর মধ্যে `<app/> কে BrowserRouter` টেগ এর মধ্যে দিতে হবে
+  - `import { BrowserRouter } from "react-router-dom"; ` ইম্পোর্ট করতে হবে
+  - `<BrowserRouter> <App /> </BrowserRouter>`
+
+- Diffrent Type Router
+  - [x] BrouserRouter
 
 ![alt text](image-15.png)
 
 ### ✨ BrowserRouter
 
-- `<browserRouter>` -- Parent
+- `<browserRouter>` -- Parent |> wrap in app.jsx IN main.jsx
 - `<Routes>` -- child
 - `<Route>` -- innerchild
 
@@ -1462,7 +1605,6 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import ProductPage from "./pages/ProductPage";
 import ProfilePage from "./pages/ProfilePage";
-
 
 <BrowserRouter>
   <Routes>
@@ -1481,6 +1623,68 @@ import ProfilePage from "./pages/ProfilePage";
 - link & navlink দিয়ে পেজ লিংক করানো যায়।
 - app.jsx এর মধ্যে BrowserRouter দিয়ে প্রথমে লিঙ্ক করাতে হবে।
 - `import { Link } from "react-router-dom"`
+- Link ব্যবহার করলে পেজ রিলোড নেয় না।
+
+---
+
+##### Craete a NavBar
+
+```jsx
+// 🗃️ 1️⃣  main.jsx
+import { BrowserRouter } from "react-router-dom";
+<BrowserRouter>
+  <App />
+</BrowserRouter>;
+```
+
+```jsx
+// 🗃️ 2️⃣  app.jsx
+import Home from "./assets/Pages/Home"; //pages
+import About from "./assets/Pages/About"; //pages
+import Product from "./assets/Pages/Product"; //pages
+import Contact from "./assets/Pages/Contact"; //pages
+import HeadersNav from "./assets/Components/HeadersNav";
+import { Route, Routes } from "react-router-dom";
+
+<div>
+  <HeadersNav />
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/product" element={<Product />} />
+    <Route path="/contact" element={<Contact />} />
+  </Routes>
+</div>;
+```
+
+```jsx
+// 🗃️ 3️⃣  HeadersNav.jsx
+import { Link } from "react-router-dom";
+<div>
+  <div className="container mx-auto py-5 bg-emerald-500 px-5 text-white">
+    <div className="nav flex justify-between align-items-center">
+      <div className="nav font-bold ">
+        <Link to="/">Learn React</Link>
+      </div>
+      <div className="menu flex gap-5 font-bold">
+        <Link to={"/"}>Home</Link>
+        <Link to={"/about"}>About</Link>
+        <Link to={"/product"}>Product</Link>
+        <Link to={"/contact"}>Contact</Link>
+      </div>
+    </div>
+  </div>
+</div>;
+```
+
+```jsx
+// 🗃️ 4️⃣ pages_text
+<div className="container mx-auto text-center my-9">
+  <h1>Pages</h1>
+</div>
+```
+
+---
 
 ```jsx
 📂 componets -> Menu.jsx
@@ -1584,6 +1788,11 @@ export default Menu;
 
 ![React Router DOM Passing Parameter](image-18.png)
 
+## State Management -> Context API
+
+- Centaraized Data
+- ![alt text](image-21.png)
+
 ### 📝 Some Notes
 
 - npx create-react-app "FileName" দিয়ে প্রোজেক্ট বানালে React Script থাকে সেইটা HTML এর সাথে Javascript Link করে থাকে।
@@ -1647,6 +1856,64 @@ export default {
 
 ---
 
+### ✨ Intregate API
+
+- Tools use -> [axious](https://axios-http.com/docs/intro)
+- axios api কে কল করতে সাহাজ্য করে থাকে
+- `npm i axios`
+- import axios from "axios";
+
+```jsx
+// 🔴 Design Card & get Data from API
+// Link file with 🗃️app.jsx
+
+import axios from "axios";
+import React, { useState } from "react";
+
+const P_Api = () => {
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const response = await axios.get(
+      "https://picsum.photos/v2/list?page=2&limit=5"
+    );
+    setData(response.data);
+    console.log(response.data);
+  };
+  return (
+    <div>
+      <div className="m-8">
+        <button
+          onClick={getData}
+          className="w-80 bg-emerald-500 text-white text-2xl font-bold active:scale-90 py-4 rounded"
+        >
+          Get Data
+        </button>
+        <div className="bg-gray-900 my-5 p-2 flex flex-wrap">
+          {data.map(function (e, id) {
+            return (
+              <div key={id} className="m-3 bg-white p-5 rounded w-96">
+                <img
+                  src={e.download_url}
+                  alt=""
+                  className="w-full rounded inline-block "
+                />
+                <h1 className="font-semibold">ID : {e.id}</h1>
+                <h1 className="font-semibold">Author : {e.author}</h1>
+                <h1 className="font-semibold">Url : {e.url}</h1>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default P_Api;
+```
+
+---
+
 #### ✨ Image Add in React
 
 ```jsx
@@ -1663,3 +1930,141 @@ const img1 = require('../assets/img/img1.jpg') -> Avobe Return
 -> Its work if Image is Public Foler
 <img src='../assets/img/img1.jpg' alt="" className="w-100" />;
 ```
+
+---
+
+# MORE IN REACT
+
+### 🪼 How React Works
+
+```js
+function customRender(reElment, container) {
+  const createDom = document.createElement(reElment.type);
+
+  createDom.innerHTML = reElment.children;
+  createDom.setAttribute("href", reElment.props.href);
+  createDom.setAttribute("target", reElment.props.target);
+
+  container.append(createDom);
+}
+const reactElement = {
+  type: "a",
+  props: {
+    href: "https://google.com",
+    target: "_blank",
+  },
+  children: "Click Me to Visit Google",
+};
+
+const mainCOntainer = document.querySelector("#root");
+
+customRender(reactElement, mainCOntainer);
+```
+
+```js
+function renderReacts(ReElement, container) {
+  // -> Create Element
+  const createElements = document.createElement(ReElement.type);
+
+  // -> Add Element
+  createElements.textContent = ReElement.children;
+
+  // -> Check Props in Element
+  for (const prop in ReElement.props) {
+    if (prop === "children") continue;
+    createElements.setAttribute(prop, ReElement.props[prop]);
+  }
+
+  // -> Appen Element Element
+  container.appendChild(createElements);
+}
+
+const customReactElement = {
+  type: "a",
+  props: {
+    href: "https://www.google.com",
+    target: "_blank",
+  },
+
+  children: "Link From Custom React",
+};
+const mains = document.querySelector("#root");
+
+renderReacts(customReactElement, mains);
+```
+
+### 🪼 Use self Function in main.jsx
+
+- নিজের মত করে ফাংশন তেরি করে ব্যবহার করা যায় - notRecomened
+- HTML Convert করতে বান্ডেলার ব্যবহার হয়। যা [vite] ব্যবহার করে।
+
+```jsx
+import { createRoot } from "react-dom/client";
+// -> Create Method like app.jsx
+function MyApp() {
+  return (
+    <div>
+      <h1>Custom APP!</h1>
+    </div>
+  );
+}
+
+createRoot(document.getElementById("root"))
+  .render
+  // <MyApp />
+  // MyApp()
+  ();
+```
+
+```jsx
+import { createRoot } from "react-dom/client";
+
+const anotherApp = <a href="#">Hello World</a>;
+
+createRoot(document.getElementById("root")).render(anotherApp);
+```
+
+```jsx
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+
+const userNameVariable = " ! Shanto";
+const reactElement = React.createElement(
+  "a", // -> Eleemnt
+  { href: "GOOGLE.com", target: "_blank" }, // -> attribute
+  "HELLO WORLD From React Element", // -> Children
+  userNameVariable // -> Evaluate Expretion / Variable
+);
+
+createRoot(document.getElementById("root")).render(reactElement);
+```
+
+---
+
+## More JSX
+
+---
+
+## ✨ React virtual DOM / Fibre / reconciliation
+
+- https://namansaxena-official.medium.com/react-virtual-dom-reconciliation-and-fiber-reconciler-cd33ceb0478e
+- createRoot :- DOM Create করে ।
+- মেইন DOM এর সাথে virtual DOM কোম্পেয়ার করে এবং ইউআই তে পরিবর্তন করে।
+- কিছু চেঞ্জ করলে, দেখে ট্রি স্ট্রাকচার এ যে কোথায় চেঞ্জ হয়েছে সেইটুকুই পরিবর্তন করে। এবং পেজ লোড নেয়না - এইটা virtual DOM
+
+#### React Fiber
+
+- https://github.com/acdlite/react-fiber-architecture
+- key features include the ability to pause, abort, or reuse work as new updates come in; the ability to assign priority to different types of updates; and new concurrency primitives.
+- pause work and come back to it later.
+- assign priority to different types of work.
+- reuse previously completed work.
+- abort work if it's no longer needed.
+
+- `***fiber Core Arctechtaer***`
+- https://blog.logrocket.com/deep-dive-react-fiber/
+
+#### reconciliation
+
+- Browser Dom & Vartial DOm এর মধ্যে Compare করে কাকে চেক করবে এবং কাজে চেঞ্জ করবে সেইটা নির্ধারন করে এমন একটা algorithom

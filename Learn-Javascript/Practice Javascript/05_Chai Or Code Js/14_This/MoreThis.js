@@ -48,6 +48,7 @@ myInfo.msg(); */
   newFunc: {
     name: "Shantos",
     msg: function () {
+      console.log(this);
       console.log("My Name is : " + this.name);
     },
   },
@@ -72,7 +73,7 @@ a.foo(); */
 
 foo(); */
 
-const a = {
+/* const a = {
   name: "wasef",
   foo: function () {
     console.log(this);
@@ -80,4 +81,20 @@ const a = {
 };
 
 const newFoo = a.foo;
-newFoo();
+newFoo(); */
+// -------------------------
+// -> Call / Bind / Apply
+
+let myInfo = {
+  name: "Shanto",
+  Learning: "Js This keyword",
+  newFunc: {
+    name: "Shantos",
+    msg: function () {
+      console.log(this);
+      // console.log("My Name is : " + this.name);
+    },
+  },
+};
+
+myInfo.newFunc.msg();
