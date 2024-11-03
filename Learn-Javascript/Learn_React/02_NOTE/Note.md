@@ -2068,3 +2068,79 @@ createRoot(document.getElementById("root")).render(reactElement);
 #### reconciliation
 
 - Browser Dom & Vartial DOm এর মধ্যে Compare করে কাকে চেক করবে এবং কাজে চেঞ্জ করবে সেইটা নির্ধারন করে এমন একটা algorithom
+
+## Interview Question
+
+![alt text](image-22.png)
+
+```jsx
+import React, { useState } from "react";
+
+const App = () => {
+  let [counter, setCouter] = useState(0);
+
+  const addValue = () => {
+    setCounter(counter + 1);
+    setCounter(counter + 1);
+    setCounter(counter + 1);
+    setCounter(counter + 1);
+  };
+
+  const removeValue = () => {
+    setCounter(counter - 1);
+  };
+
+  return (
+    <div>
+      <h1>Lest Run Hooks</h1>
+      <div>
+        <h2>Counter Value : {counter}</h2>
+        <button onClick={addValue}>Add Value</button>
+        <button onClick={removeValue}>Remove Value</button>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+```
+
+- এইখানে Question হচ্ছে ৪ বার setCounter দেওয়ার ফলে কি হবে ?
+
+- ✅ useState ডাটা একাবারে ব্রাঞ্চ হিসেবে পাঠায়, এর জন্য ৪ বার setCounter দেওয়ার ফলে একবারই আপডেট হবে।
+
+![alt text](image-23.png)
+
+- ৪ বার বা করে আপডেট করতে হলে setCounter এর মধ্যে কলবেক ফাংশন পাস করতে হবে।
+
+```jsx
+import React, { useState } from "react";
+
+const App = () => {
+  let [counter, setCouter] = useState(0);
+
+  const addValue = () => {
+    setCounter((Prevcounter) => Prevcounter + 1);
+    setCounter((Prevcounter) => Prevcounter + 1);
+    setCounter((Prevcounter) => Prevcounter + 1);
+    setCounter((Prevcounter) => Prevcounter + 1);
+  };
+
+  const removeValue = () => {
+    setCounter(counter - 1);
+  };
+
+  return (
+    <div>
+      <h1>Lest Run Hooks</h1>
+      <div>
+        <h2>Counter Value : {counter}</h2>
+        <button onClick={addValue}>Add Value</button>
+        <button onClick={removeValue}>Remove Value</button>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+```
