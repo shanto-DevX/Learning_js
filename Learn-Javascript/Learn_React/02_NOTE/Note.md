@@ -78,7 +78,7 @@
   - 2️⃣ Vite is asset Bundling & give
   - 2️⃣ Modules with depenencies -> Static Assets
 
-  - npm create vite@latest
+  - npm create vite@latest || $ npm create vite@latest ./ [For Create Project in this file]
   - y
   - FOlder Name
   - React
